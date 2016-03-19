@@ -1,0 +1,27 @@
+observation au resto
+Personnes intéressées:
+4 types d'utilisateurs: consommateur, serveur (personne), cuisinier, ( gestionnaire des recettes )
+
+consommateur:
+   - clientele de 20 à 45 ans
+=> parcours de menu,
+=> gestion de panier (commande): 
+         * choix
+         * modification
+=> demande d'addition (avec choix de moyen de paiement),
+=> appel d'un serveur pour toute autre demande:
+         * aide à la commande
+         * couverts
+         * précisions sur les ingrédients
+         * réclamations, ...
+
+Serveur:
+=> prise de commande avec identification de table,
+=> validation de commande délivrée,
+=> validation des commandes payées,
+=> reception des notifications,
+
+Cuisinier:
+=> notification des commandes prêtes,
+=> acceptation de commandes,
+=> impossibilité d'assurer une commande
