@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="3"
+        android:rowCount="4"
+        >
+        <Button android:text="1"
+            android:id="@+id/button1"
+            android:onClick="numpad"/>
+
+        <Button android:text="2"
+            android:id="@+id/button2"
+            android:onClick="numpad"/>
+
+        <Button android:text="3"
+            android:id="@+id/button3"
+            android:onClick="numpad"/>
+
+        <Button android:text="4"
+            android:id="@+id/button4"
+            android:onClick="numpad"/>
+
+        <Button android:text="5"
+            android:id="@+id/button5"
+            android:onClick="numpad"/>
+
+        <Button android:text="6"
+            android:id="@+id/button6"
+            android:onClick="numpad"/>
+
+        <Button android:text="7"
+            android:id="@+id/button7"
+            android:onClick="numpad"/>
+
+        <Button android:text="8"
+            android:id="@+id/button8"
+            android:onClick="numpad"/>
+
+        <Button android:text="9"
+            android:id="@+id/button9"
+            android:onClick="numpad"/>
+
+        <Button android:text="0"
+            android:layout_column="1"
+            android:id="@+id/button0"
+            android:onClick="numpad"/>
+
+        <Button android:text="del"
+            android:layout_column="2"
+            android:id="@+id/buttonDel"
+            android:onClick="numpad"/>
+
+    </GridLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
