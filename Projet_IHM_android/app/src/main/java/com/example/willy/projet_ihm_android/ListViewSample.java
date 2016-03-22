@@ -26,30 +26,31 @@ public class ListViewSample extends AppCompatActivity implements AdapterView.OnI
     //Appelée lors de la création de l'activité
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        Log.d("hello", "");
+        Log.d("", "Activity ListViewExample started");
 
         setContentView(R.layout.list_view_sample_layout);
         listview = (ListView) findViewById(R.id.listView);
 
-        //Juste histoire d'avoir de la data
+        //Juste histoire d'avoir de la data, ça pourrait être n'importe quoi, n'importe où
         Random r = new Random();
         HashMap<Integer, Integer> data = new HashMap<Integer, Integer>();
         for (int i = 0; i < 40; i++) {
             data.put(Integer.valueOf(i), Integer.valueOf(r.nextInt(50)));
         }
 
-        //Adapter
+        //Adapter : En gros ça permet de lier une vue (Dans notre cas la ListView) à des données
         MyAdapter adapter;
         adapter = new MyAdapter(data);
         listview.setAdapter(adapter);
+
+        //Juste pour qu'un élément soit cliquable
         listview.setOnItemClickListener(this);
 
-        Log.d("byebye", "");
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        //Ici, la position récupérée est celle fournie par la méthode getItem de notre classe MyAdapter
         Toast.makeText(this, "Item " + position + "!!!", Toast.LENGTH_LONG).show();
     }
 
@@ -86,14 +87,13 @@ public class ListViewSample extends AppCompatActivity implements AdapterView.OnI
             if(v == null){
                 v = inflater.inflate(R.layout.rangee, parent, false);
             }
-            Log.d("ici", "1");
+
             Random r = new Random();
             TextView title = (TextView)v.findViewById(R.id.leftrow);
             TextView value = (TextView)v.findViewById(R.id.rightrow);
-            Log.d("ici", "2");
+
             title.setText("Data "+position);
             value.setText(data.get(position).toString());
-            Log.d("ici", "3");
             return v;
         }
     }
