@@ -12,8 +12,6 @@ import java.util.List;
  * Created by tanguinoche on 02/04/16.
  */
 public class Table implements View.OnTouchListener {
-    private Integer GRAY=0, GREEN=4, YELLOW=8, TURQUOISE=12, ORANGE=16, PURPLE=20,
-            BLUE=24, RED=28, PINK=32, GROWN=36;
     List<ChairImageView> chairs;
     List<ChairImageView> chairsSelected;
 
