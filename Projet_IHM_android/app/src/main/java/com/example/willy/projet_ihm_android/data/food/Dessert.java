@@ -1,6 +1,5 @@
 package com.example.willy.projet_ihm_android.data.food;
 
-import com.example.willy.projet_ihm_android.data.ProductAbstract;
 
 /**
  * Created by tanguinoche on 07/04/16.
