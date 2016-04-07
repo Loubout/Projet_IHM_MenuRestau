@@ -30,14 +30,28 @@ public class StartActivity extends Activity implements View.OnClickListener {
 
         setContentView(R.layout.start_activity);
 
-        //Les chaises
+        //TABLE 1
         ArrayList<Chair> chairs = new ArrayList<>();
         for(int i =0; i<6; i++) {
             chairs.add(new Chair());
         }
-        //Les tables
         ArrayList<Table> tables = new ArrayList<>();
-        tables.add(new Table(chairs));
+        tables.add(new Table(chairs, 1));
+
+        //TABLE 2
+        chairs = new ArrayList<>();
+        for(int i =0; i<6; i++) {
+            chairs.add(new Chair());
+        }
+        tables.add(new Table(chairs, 2));
+
+        //TABLE 3
+        chairs = new ArrayList<>();
+        for(int i =0; i<6; i++) {
+            chairs.add(new Chair());
+        }
+        tables.add(new Table(chairs, 3));
+
         //Le restaurant
         restaurant = new Restaurant(tables);
 

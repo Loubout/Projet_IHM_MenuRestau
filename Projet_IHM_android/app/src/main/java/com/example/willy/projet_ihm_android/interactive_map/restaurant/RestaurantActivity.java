@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.willy.projet_ihm_android.R;
 import com.example.willy.projet_ihm_android.data.Restaurant;
@@ -35,10 +34,16 @@ public class RestaurantActivity extends Activity implements View.OnClickListener
 
         //Ici, on représente le restaurant qui compte 1 table, on lance le layout associé, et on récupère ImageView des tables sur le layout
         tableViews = new ArrayList<>();
-        if(restaurant.getNbTables() == 1) {
+        if(restaurant.getNbTables() == 3) {
             setContentView(R.layout.interactive_map_restaurant);
-            TableImageView t = (TableImageView)findViewById(R.id.imageView);
-            t.setTable(restaurant.getTables().get(0)); //On associe la table, à l'image.
+            TableImageView t = (TableImageView)findViewById(R.id.table1);
+            t.setTable(restaurant.getTables().get(0));
+            tableViews.add(t);
+            t = (TableImageView)findViewById(R.id.table2);
+            t.setTable(restaurant.getTables().get(1));
+            tableViews.add(t);
+            t = (TableImageView)findViewById(R.id.table3);
+            t.setTable(restaurant.getTables().get(2));
             tableViews.add(t);
         }
 

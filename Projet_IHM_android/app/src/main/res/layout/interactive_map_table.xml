@@ -105,6 +105,18 @@
             android:layout_gravity="center_horizontal"
             android:layout_below="@+id/table"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Table"
+            android:layout_alignParentTop="true"
+            android:layout_alignEnd="@+id/table"
+            android:layout_toEndOf="@+id/left1"
+            android:layout_alignBottom="@+id/left1"
+            android:gravity="center_horizontal"
+            android:id="@+id/num_table" />
+
     </RelativeLayout>
 
 

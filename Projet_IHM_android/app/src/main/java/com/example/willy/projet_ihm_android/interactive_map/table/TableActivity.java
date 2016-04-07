@@ -45,7 +45,11 @@ public class TableActivity extends Activity implements AdapterView.OnItemClickLi
         setContentView(R.layout.interactive_map_table);
 
         Bundle b = getIntent().getExtras();
-        List<Chair> chairs = ((Table)b.getParcelable("table")).getChairs();
+        Table table = (Table)b.getParcelable("table");
+        List<Chair> chairs = table.getChairs();
+
+        TextView num_table = (TextView) findViewById(R.id.num_table);
+        num_table.setText("Table "+table.getNumero());
 
         ChairImageView chair1 = (ChairImageView) findViewById(R.id.left1);
         chair1.setChairModel(chairs.get(0));
