@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="item1">Age Nasu: aubergines frites au miso.</string>
+    <string name="item2">Edamame: feves de soja cuites au sel.</string>
+    <string name="item3">Ohitashi: salade d\'epinards frais, sauce sesame.</string>
+    <string name="item4">Creme brulee: creme au the Hojicha torrefie.</string>
+    <string name="item5">Tiramisu: tiramisu maison au the vert.</string>
+    <string name="item6">Mochi ice cream: the vert,vanille,sakura,myrtille,passion,mangue. (1piece)</string>
+    <string name="item7">Buta kimchi: poitrine de porc,legumes et chou pimente.</string>
+    <string name="item8">Chawanmushi: flan sale au poulet,crevette,shiitake et citron.</string>
+    <string name="item9">Ebi cream korokke: croquettes cremeuses aux crevettes.</string>
+    <string name="item10">Gyu no tataki: tranches de filet de boeuf marine au gingembre.</string>
+    <string name="item11">Hiyayakko: tofu, daikon et copeaux de bonite.</string>
+    <string name="item12">Karaage: poulet marine au gingembre et frit. (7 pieces)</string>
+    <string name="item13">Veloute edamame: feves de soja, dashi et oeuf mollet BIO.</string>
+    <string name="item14">Donburi shake miso: bol de riz garni de filet de boeuf emince, jaune d\'oeuf et legumes.</string>
+    <string name="item15">Okonomiyaki: galette de chou a base de farine, oeuf bio, gingembre et cebette.</string>
+    <string name="item16">Takoyaki: bouchees chaudes, cuites a l\'exterieur et fondantes a l\'interieur. garniture: poulpe. sauces: classique.</string>
+    <string name="item17">Takoyaki spicy: bouchees chaudes, cuites a l\'exterieur et fondantes a l\'interieur. garniture: poulpe. sauces: spicy.</string>
+    <string name="item18">Yakisoba: nouilles sautees avec chiu, oignons, carottes, soja, cebette et gingembre.</string>
+
+
+
+
+
+
+</resources>
