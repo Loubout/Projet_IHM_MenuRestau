@@ -1,4 +1,22 @@
 <resources>
     <string name="app_name">Projet_IHM_android</string>
     <string name="action_settings">Settings</string>
+    <string name="text_empty"></string>
+
+    <string-array name="menuItems">
+        <item>Apéritif</item>
+        <item>Entrée</item>
+        <item>Plat</item>
+        <item>Dessert</item>
+        <item>Boisson</item>
+    </string-array>
+
+    <string name="aperitifItem">Apéritif</string>
+    <string name="entreeItem">Entrée</string>
+    <string name="platItem">Plat</string>
+    <string name="dessertItem">Dessert</string>
+    <string name="boissonItem">Boisson</string>
+
+    <string name="panier">Panier</string>
+
 </resources>

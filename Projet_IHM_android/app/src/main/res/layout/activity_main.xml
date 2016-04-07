@@ -1,27 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="com.example.willy.projet_ihm_android.MainActivity">
+    android:layout_height="match_parent">
 
-    <android.support.design.widget.AppBarLayout
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="top" >
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <fragment
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:layout_height="wrap_content"
+            android:id="@+id/topPanel"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:name="com.example.willy.projet_ihm_android.fragment_view.TopPaneFragment"
+            tools:layout="@layout/top_pane_fragment" />
 
-    </android.support.design.widget.AppBarLayout>
+    </LinearLayout>
 
-    <include layout="@layout/content_main" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top"
+        android:weightSum="5">
 
+        <fragment
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/leftSidePanel"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:name="com.example.willy.projet_ihm_android.fragment_view.LeftPaneFragment"
+            tools:layout="@layout/left_pane_fragment"
+            android:layout_weight="1"/>
 
-</android.support.design.widget.CoordinatorLayout>
+        <fragment
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/mainPanel"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:name="com.example.willy.projet_ihm_android.fragment_view.MainPaneFragment"
+            tools:layout="@layout/main_pane_fragment"
+            android:layout_weight="4"/>
+
+    </LinearLayout>
+
+</LinearLayout>
