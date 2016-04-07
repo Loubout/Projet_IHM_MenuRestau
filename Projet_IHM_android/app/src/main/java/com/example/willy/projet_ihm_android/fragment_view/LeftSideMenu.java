@@ -1,50 +1,38 @@
-package com.example.willy.projet_ihm_android;
+package com.example.willy.projet_ihm_android.fragment_view;
 
-import android.app.Activity;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.willy.projet_ihm_android.fragment_view.LeftPaneFragment;
-import com.example.willy.projet_ihm_android.fragment_view.MainPaneFragment;
+import com.example.willy.projet_ihm_android.R;
 
 import java.util.HashMap;
-import java.util.Random;
 
-public class MainActivity extends Activity implements AdapterView.OnItemClickListener {
+/**
+ * Created by tanguinoche on 19/03/16.
+ */
+public class LeftSideMenu extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     ListView listview;
 
+    //Appelée lors de la création de l'activité
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /*
+        Log.d("", "Activity ListViewExample started");
+
         setContentView(R.layout.activity_main);
-
-        Log.d("", "MainActivity started");
-
-        LeftPaneFragment leftMenuFragment = new LeftPaneFragment();
-        MainPaneFragment mainPaneFragment = new MainPaneFragment();
-
-        FragmentManager manager = getFragmentManager();
-
-        FragmentTransaction transaction = manager.beginTransaction();
-
-        transaction.add(R.id.leftSidePanel, leftMenuFragment, "leftMenuFragment");
-        transaction.add(R.id.mainPanel, mainPaneFragment, "mainFragment");
-
-        listview = (ListView) findViewById(android.R.id.list);
-
+        listview = (ListView) findViewById(R.id.leftSideListView);
+/*
         //Juste histoire d'avoir de la data, ça pourrait être n'importe quoi, n'importe où
-        Random r     = new Random();
+        Random r = new Random();
         HashMap<Integer, Integer> data = new HashMap<Integer, Integer>();
         for (int i = 0; i < 40; i++) {
             data.put(Integer.valueOf(i), Integer.valueOf(r.nextInt(50)));
@@ -57,8 +45,15 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
 
         //Juste pour qu'un élément soit cliquable
         listview.setOnItemClickListener(this);
-
+*/
     }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        //Ici, la position récupérée est celle fournie par la méthode getItem de notre classe MyAdapter
+        Toast.makeText(this, "Item " + position + "!!!", Toast.LENGTH_LONG).show();
+    }
+
 
     private class MyAdapter extends BaseAdapter {
 
@@ -90,23 +85,11 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
             View v = recycleView;
 
             if(v == null){
-                v = inflater.inflate(R.layout.rangee, parent, false);
+                v = inflater.inflate(R.layout.menu_item_layout, parent, false);
             }
 
-            Random r = new Random();
-            TextView title = (TextView)v.findViewById(R.id.leftrow);
-            TextView value = (TextView)v.findViewById(R.id.rightrow);
-
-            title.setText("Data "+position);
-            value.setText(data.get(position).toString());
             return v;
         }
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        //Ici, la position récupérée est celle fournie par la méthode getItem de notre classe MyAdapter
-        Toast.makeText(this, "Item " + position + "!!!", Toast.LENGTH_SHORT).show();
     }
 
 }
