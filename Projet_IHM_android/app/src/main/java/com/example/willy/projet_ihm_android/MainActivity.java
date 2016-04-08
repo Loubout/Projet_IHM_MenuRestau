@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.willy.projet_ihm_android.fragment_view.LeftPaneFragment;
 import com.example.willy.projet_ihm_android.fragment_view.MainPaneFragment;
+import com.example.willy.projet_ihm_android.fragment_view.TopPaneFragment;
 
 import java.util.HashMap;
 import java.util.Random;
@@ -31,6 +32,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
 
         Log.d("", "MainActivity started");
 
+        TopPaneFragment topPaneFragment = new TopPaneFragment();
         LeftPaneFragment leftMenuFragment = new LeftPaneFragment();
         MainPaneFragment mainPaneFragment = new MainPaneFragment();
 
