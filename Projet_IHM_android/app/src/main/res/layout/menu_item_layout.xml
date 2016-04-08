@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-    android:background="#ffffc12d">
+    android:layout_width="match_parent">
 
     <TextView
         android:layout_width="match_parent"
@@ -14,6 +13,7 @@
         android:minWidth="@dimen/activity_horizontal_margin"
         android:lines="1"
         android:scrollHorizontally="false"
+        android:background="@drawable/item_selector"
         />
 
 
