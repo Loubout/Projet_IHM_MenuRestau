@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="left|center|right"
+    >
+
+    <TextView
+        android:id="@+id/plat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:padding="10dp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:singleLine="true"
+        android:layout_marginLeft="10dip"
+        tools:text="Plat"
+        />
+
+    <TextView
+        android:id="@+id/quantite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:padding="10dp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        tools:text="Quantite"
+        android:gravity="center"
+        android:singleLine="true"
+        android:layout_marginLeft="10dip"
+        />
+
+    <TextView
+        android:id="@+id/prix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:padding="10dp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        tools:text="prix"
+        android:gravity="center"
+        android:singleLine="true"
+        android:layout_marginLeft="10dip"
+        />
+
+    <Button
+        android:id="@+id/retirer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:padding="10dp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        tools:text="retirer"
+        android:layout_alignParentRight="true"
+        android:singleLine="true"
+        android:layout_marginRight="10dip"
+        />
+
+</LinearLayout>
