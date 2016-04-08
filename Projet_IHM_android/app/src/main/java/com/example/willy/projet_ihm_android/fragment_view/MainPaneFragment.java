@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.willy.projet_ihm_android.R;
 import com.example.willy.projet_ihm_android.carroussel_view.CarouselView;
@@ -14,7 +16,7 @@ import com.example.willy.projet_ihm_android.carroussel_view.ImageListener;
 /**
  * Created by Tomohiro on 22/03/16.
  */
-public class MainPaneFragment extends Fragment {
+public class MainPaneFragment extends Fragment implements AdapterView.OnClickListener {
 
 
     CarouselView carouselView;
@@ -40,4 +42,10 @@ public class MainPaneFragment extends Fragment {
         }
     };
 
+
+    @Override
+    public void onClick(View view) {
+        //Ici, la position récupérée est celle fournie par la méthode getItem de notre classe MyAdapter
+        Toast.makeText(getActivity(), "MainPaneClick ", Toast.LENGTH_SHORT).show();
+    }
 }

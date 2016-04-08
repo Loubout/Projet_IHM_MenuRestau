@@ -7,4 +7,6 @@
     <color name="foreground_material_light">#f80505</color>
     <color name="primary_text_default_material_light">#def3eeee</color>
     <color name="primary_text_material_light">#ffffff</color>
+    <color name="colorMenuItem">@android:color/holo_blue_light</color>
+    <color name="colorPressed">#fa0fff</color>
 </resources>
