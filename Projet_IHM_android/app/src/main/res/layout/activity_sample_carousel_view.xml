@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="10">
 
     <com.example.willy.projet_ihm_android.carroussel_view.CarouselView
         android:id="@+id/carouselView"
         android:layout_width="match_parent"
-        android:layout_height="200dp"/>
+        android:layout_height="0dp"
+        android:layout_weight="8"/>
 
        <!-- app:fillColor="#FFFFFFFF"
         app:pageColor="#00000000"
@@ -14,4 +16,6 @@
         app:slideInterval="3000"
         app:strokeColor="#FF777777"
         app:strokeWidth="1dp"/> -->
+
+
 </LinearLayout>
