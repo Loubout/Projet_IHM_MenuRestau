@@ -13,7 +13,7 @@ public class SampleCarouselViewActivity extends AppCompatActivity {
 
     CarouselView carouselView;
 
-    int[] sampleImages = {R.drawable.carousel_test_1, R.drawable.carousel_test_2, R.drawable.carousel_test_3, R.drawable.carousel_test_4, R.drawable.carousel_test_5};
+    int[] sampleImages = {R.drawable.food_accompagnement_item1, R.drawable.food_accompagnement_item2, R.drawable.food_accompagnement_item3, R.drawable.food_dessert_item4, R.drawable.food_dessert_item5};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

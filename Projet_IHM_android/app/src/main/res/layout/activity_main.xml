@@ -48,7 +48,7 @@
             android:id="@+id/mainPanel"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:name="com.example.willy.projet_ihm_android.fragment_view.MainPaneFragment"
+            android:name="com.example.willy.projet_ihm_android.fragment_view.CarrousselFragment"
             tools:layout="@layout/main_pane_fragment"
             android:layout_weight="4"/>
 

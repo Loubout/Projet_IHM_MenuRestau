@@ -1,5 +1,6 @@
 package com.example.willy.projet_ihm_android.fragment_view;
 
+import android.app.Activity;
 import android.app.ListFragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import com.example.willy.projet_ihm_android.R;
 public class LeftPaneFragment extends ListFragment {
 
     ListView listview;
+    OnArticleSelectedListener mListener;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -35,6 +37,20 @@ public class LeftPaneFragment extends ListFragment {
                 R.layout.menu_item_layout, R.id.menuItem, items);
 
         setListAdapter(aa);
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            mListener = (OnArticleSelectedListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement OnArticleSelectedListener");
+        }
+    }
+
+    public interface OnArticleSelectedListener {
+        public void onArticleSelected(String data);
     }
 
     public View getViewByPosition(int pos, ListView listView) {
@@ -55,7 +71,36 @@ public class LeftPaneFragment extends ListFragment {
         View item = getViewByPosition(pos, l);
         item.setSelected(true);
 
-        Toast.makeText(getActivity(), "Item " + pos + " was clicked", Toast.LENGTH_SHORT).show();
+        String data = (l.getItemAtPosition(pos)).toString();
+
+        if(mListener != null)
+            mListener.onArticleSelected(data);
+
+        Toast.makeText(getActivity(), data, Toast.LENGTH_SHORT).show();
+
+/*
+        PaneFragment newFragment = new CarrousselFragment();
+        if(data.equals("Apéritif")){
+            newFragment = new AperitifFragment();
+        }
+        else if(data.equals("Entrée")){
+            newFragment = new EntreeFragment();
+        }
+        else if(data.equals("Plat")){
+            newFragment = new PlatFragment();
+        }
+        else if(data.equals("Dessert")){
+            newFragment = new DessertFragment();
+        }
+        else if(data.equals("Boisson")){
+            newFragment = new BoissonFragment();
+        }
+
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.mainPanel, newFragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+*/
     }
 
 }
