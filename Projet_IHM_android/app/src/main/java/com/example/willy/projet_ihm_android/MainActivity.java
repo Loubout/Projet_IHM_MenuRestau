@@ -16,7 +16,7 @@ import com.example.willy.projet_ihm_android.fragment_view.PaneFragment;
 import com.example.willy.projet_ihm_android.fragment_view.PlatFragment;
 import com.example.willy.projet_ihm_android.fragment_view.TopPaneFragment;
 
-public class MainActivity extends Activity implements LeftPaneFragment.OnArticleSelectedListener {
+public class MainActivity extends Activity implements LeftPaneFragment.OnArticleSelectedListener, EntreeFragment.OnArticleSelectedInEntreeFragmentListener {
 
     FragmentManager manager;
     FragmentTransaction transaction;
@@ -81,5 +81,10 @@ public class MainActivity extends Activity implements LeftPaneFragment.OnArticle
     public PaneFragment getCurrentFragment(){
         return this.currentMainFragment;
     }
+
+    public void onArticleSelectedInEntreeFragmentListener(String data){
+
+    }
+
 
 }

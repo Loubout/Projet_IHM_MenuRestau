@@ -19,4 +19,6 @@
 
     <string name="panier">Panier</string>
 
+    <string name="waiterCall">Appeler le serveur</string>
+
 </resources>
