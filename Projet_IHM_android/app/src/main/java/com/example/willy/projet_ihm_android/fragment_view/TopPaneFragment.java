@@ -1,6 +1,8 @@
 package com.example.willy.projet_ihm_android.fragment_view;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,6 +38,13 @@ public class TopPaneFragment extends Fragment implements AdapterView.OnClickList
     @Override
     public void onClick(View view) {
         //Ici, la position récupérée est celle fournie par la méthode getItem de notre classe MyAdapter
+
+        FragmentManager fragmentManager = getActivity().getFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.mainPanel, new CarrousselFragment());
+        transaction.addToBackStack(null);
+        transaction.commit();
+
         Toast.makeText(getActivity(), "TopPaneClick ", Toast.LENGTH_SHORT).show();
     }
 

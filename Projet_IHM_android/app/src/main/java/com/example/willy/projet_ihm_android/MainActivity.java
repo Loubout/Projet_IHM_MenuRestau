@@ -73,7 +73,7 @@ public class MainActivity extends Activity implements LeftPaneFragment.OnArticle
             currentMainFragment = new BoissonFragment();
             transaction.replace(R.id.mainPanel, currentMainFragment);
         }
-
+        transaction.addToBackStack(null);
         transaction.commit();
        // currentMainFragment.updateTextField(data);
     }

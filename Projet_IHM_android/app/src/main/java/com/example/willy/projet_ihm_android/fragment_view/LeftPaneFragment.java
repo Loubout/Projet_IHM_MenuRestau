@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.willy.projet_ihm_android.R;
 
@@ -76,31 +75,7 @@ public class LeftPaneFragment extends ListFragment {
         if(mListener != null)
             mListener.onArticleSelected(data);
 
-        Toast.makeText(getActivity(), data, Toast.LENGTH_SHORT).show();
-
-/*
-        PaneFragment newFragment = new CarrousselFragment();
-        if(data.equals("Apéritif")){
-            newFragment = new AperitifFragment();
-        }
-        else if(data.equals("Entrée")){
-            newFragment = new EntreeFragment();
-        }
-        else if(data.equals("Plat")){
-            newFragment = new PlatFragment();
-        }
-        else if(data.equals("Dessert")){
-            newFragment = new DessertFragment();
-        }
-        else if(data.equals("Boisson")){
-            newFragment = new BoissonFragment();
-        }
-
-        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.mainPanel, newFragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
-*/
+        //Toast.makeText(getActivity(), data, Toast.LENGTH_SHORT).show();
     }
 
 }
