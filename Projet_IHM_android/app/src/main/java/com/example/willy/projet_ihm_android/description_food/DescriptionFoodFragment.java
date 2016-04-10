@@ -1,11 +1,11 @@
 package com.example.willy.projet_ihm_android.description_food;
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 /**
  * Created by Willy on 10/04/2016.
  */
-public class DescriptionFoodFragment {
-=======
+
+//=======
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -47,5 +47,5 @@ public class DescriptionFoodFragment extends Fragment {
     }
 
 
->>>>>>> ed65a6b... test
+//>>>>>>> ed65a6b... test
 }
