@@ -29,7 +29,7 @@ public class DessertFragment extends PaneFragment {
         super.onCreate(savedInstanceState);
         View view = inflater.inflate(R.layout.two_column_tiles, container, false);
         dessertView = (GridView) view.findViewById(R.id.gridview);
-        dessertView.setAdapter(new ImageAdapter(getActivity()));
+        dessertView.setAdapter(ImageAdapter.getDessertsImageAdapter(getActivity()));
 
         dessertView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,

@@ -22,7 +22,7 @@ public class AperitifFragment extends PaneFragment {
         System.out.println("Aperitif View");
         View view = inflater.inflate(R.layout.two_column_tiles, container, false);
         aperitifView = (GridView) view.findViewById(R.id.gridview);
-        aperitifView.setAdapter(new ImageAdapter(getActivity()));
+        aperitifView.setAdapter(ImageAdapter.getAperitifImageAdapter(getActivity()));
 
         aperitifView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,

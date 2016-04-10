@@ -21,15 +21,15 @@ public class BoissonFragment extends PaneFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.two_column_tiles, container, false);
         boissonView = (GridView) view.findViewById(R.id.gridview);
-        boissonView.setAdapter(new ImageAdapter(getActivity()));
+        boissonView.setAdapter(ImageAdapter.getDrinksImageAdapter(getActivity()));
 
-        boissonView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v,
-                                    int position, long id) {
-                Toast.makeText(getActivity(), "" + position,
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
+                boissonView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    public void onItemClick(AdapterView<?> parent, View v,
+                                            int position, long id) {
+                        Toast.makeText(getActivity(), "" + position,
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
         return boissonView;
     }
 }

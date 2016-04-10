@@ -21,7 +21,7 @@ public class EntreeFragment extends PaneFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.two_column_tiles, container, false);
         entreeView = (GridView) view.findViewById(R.id.gridview);
-        entreeView.setAdapter(new ImageAdapter(getActivity()));
+        entreeView.setAdapter(ImageAdapter.getEntreeImageAdapter(getActivity()));
 
         entreeView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,

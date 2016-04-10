@@ -1,6 +1,7 @@
 package com.example.willy.projet_ihm_android.two_column_tiles;
 
 import android.content.Context;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,16 +26,63 @@ public final class ImageAdapter extends BaseAdapter {
     public ImageAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
 
-        mItems.add(new Item("dessert1", R.drawable.food_dessert_item4));
-        mItems.add(new Item("dessert2", R.drawable.food_dessert_item6));
-        mItems.add(new Item("dessert3", R.drawable.food_dessert_item5));
-        mItems.add(new Item("plat1", R.drawable.food_plat_item14));
-        mItems.add(new Item("plat2", R.drawable.food_plat_item15));
-        mItems.add(new Item("plat3", R.drawable.food_plat_item16));
-        mItems.add(new Item("plat4", R.drawable.food_plat_item17));
-        mItems.add(new Item("plat5", R.drawable.food_plat_item18));
-
     }
+
+    // c'est là qu'on se dit qu'on pourrait une factory ...
+    // mais en fait non fuck it
+    public static ImageAdapter getAperitifImageAdapter (Context context){
+        ImageAdapter imgAdapt = new ImageAdapter(context);
+        imgAdapt.mItems.add(new Item("dessert1", R.drawable.food_accompagnement_item1));
+        imgAdapt.mItems.add(new Item("dessert2", R.drawable.food_accompagnement_item2));
+        imgAdapt.mItems.add(new Item("dessert3", R.drawable.food_accompagnement_item3));
+        return imgAdapt;
+    }
+
+
+
+    public static ImageAdapter getDessertsImageAdapter (Context context){
+        ImageAdapter imgAdapt = new ImageAdapter(context);
+        imgAdapt.mItems.add(new Item("dessert1", R.drawable.food_dessert_item4));
+        imgAdapt.mItems.add(new Item("dessert2", R.drawable.food_dessert_item6));
+        imgAdapt.mItems.add(new Item("dessert3", R.drawable.food_dessert_item5));
+        return imgAdapt;
+    }
+
+    public static ImageAdapter getDishesImageAdapter (Context context){
+        ImageAdapter imgAdapt = new ImageAdapter(context);
+        imgAdapt.mItems.add(new Item("plat1", R.drawable.food_plat_item14));
+        imgAdapt.mItems.add(new Item("plat2", R.drawable.food_plat_item15));
+        imgAdapt.mItems.add(new Item("plat3", R.drawable.food_plat_item16));
+        imgAdapt.mItems.add(new Item("plat4", R.drawable.food_plat_item17));
+        imgAdapt.mItems.add(new Item("plat5", R.drawable.food_plat_item18));
+        return imgAdapt;
+    }
+
+    public static ImageAdapter getEntreeImageAdapter(Context context){
+        ImageAdapter imgAdapt = new ImageAdapter(context);
+        imgAdapt.mItems.add(new Item("entree1", R.drawable.food_entree_item7));
+        imgAdapt.mItems.add(new Item("entree2", R.drawable.food_entree_item8));
+        imgAdapt.mItems.add(new Item("entree3", R.drawable.food_entree_item9));
+        imgAdapt.mItems.add(new Item("entree4", R.drawable.food_entree_item10));
+        imgAdapt.mItems.add(new Item("entree5", R.drawable.food_entree_item11));
+        imgAdapt.mItems.add(new Item("entree6", R.drawable.food_entree_item12));
+        imgAdapt.mItems.add(new Item("entree7", R.drawable.food_entree_item13));
+        return imgAdapt;
+    }
+
+    public static ImageAdapter getDrinksImageAdapter(Context context){
+        ImageAdapter imgAdapt = new ImageAdapter(context);
+        imgAdapt.mItems.add(new Item("Cuba Libre", R.drawable.food_boisson_2));
+        imgAdapt.mItems.add(new Item("Little Tickle", R.drawable.food_boisson_3));
+        imgAdapt.mItems.add(new Item("Vanilla Pear Drop", R.drawable.food_boisson_4));
+        imgAdapt.mItems.add(new Item("Blue Hawaiian", R.drawable.food_boisson_5));
+        imgAdapt.mItems.add(new Item("Mary Pickford", R.drawable.food_boisson_6));
+        imgAdapt.mItems.add(new Item("Winter Daiquiri", R.drawable.food_boisson_7));
+        imgAdapt.mItems.add(new Item("Marseillan", R.drawable.food_boisson_8));
+        return imgAdapt;
+    }
+
+
 
     @Override
     public int getCount() {

@@ -21,15 +21,15 @@ public class PlatFragment extends PaneFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.two_column_tiles, container, false);
         platView = (GridView) view.findViewById(R.id.gridview);
-        platView.setAdapter(new ImageAdapter(getActivity()));
+        platView.setAdapter(ImageAdapter.getDishesImageAdapter(getActivity()));
 
-        platView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v,
-                                    int position, long id) {
-                Toast.makeText(getActivity(), "" + position,
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
+                platView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    public void onItemClick(AdapterView<?> parent, View v,
+                                            int position, long id) {
+                        Toast.makeText(getActivity(), "" + position,
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
         return platView;
     }
 
