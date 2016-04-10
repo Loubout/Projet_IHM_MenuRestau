@@ -3,13 +3,16 @@
 android:orientation="vertical"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-android:background="@android:color/holo_blue_dark"
+android:background="@android:color/holo_red_dark"
 android:gravity="top">
 
 <ListView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@android:id/list"/>
+    android:id="@android:id/list"
+
+    android:dividerHeight="4px"
+    />
 
 <TextView
     android:id="@android:id/empty"
@@ -17,7 +20,11 @@ android:gravity="top">
     android:layout_height="wrap_content"
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"
-    android:text="menu/text_empty" />
+    android:text="menu/text_empty"
+
+
+
+    />
 
 
 </LinearLayout>
