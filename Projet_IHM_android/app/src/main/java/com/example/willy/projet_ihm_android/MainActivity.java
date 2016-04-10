@@ -9,6 +9,7 @@ import android.util.Log;
 import com.example.willy.projet_ihm_android.fragment_view.AperitifFragment;
 import com.example.willy.projet_ihm_android.fragment_view.BoissonFragment;
 import com.example.willy.projet_ihm_android.fragment_view.CarrousselFragment;
+import com.example.willy.projet_ihm_android.fragment_view.DescriptionFoodFragment;
 import com.example.willy.projet_ihm_android.fragment_view.DessertFragment;
 import com.example.willy.projet_ihm_android.fragment_view.EntreeFragment;
 import com.example.willy.projet_ihm_android.fragment_view.LeftPaneFragment;
@@ -81,5 +82,14 @@ public class MainActivity extends Activity implements LeftPaneFragment.OnArticle
     public PaneFragment getCurrentFragment(){
         return this.currentMainFragment;
     }
+
+    public void afficheDesc(String n, String d, String p){
+        manager = getFragmentManager();
+        transaction = manager.beginTransaction();
+        transaction.replace(  currentMainFragment.getId(), new DescriptionFoodFragment(n,d,p));
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
 
 }
