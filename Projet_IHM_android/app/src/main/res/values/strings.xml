@@ -94,5 +94,26 @@ Ebi cream korokke</string>
 </string>
 
 
+    <string name="item1_price">8e</string>
+    <string name="item2_price">5e</string>
+    <string name="item3_price">6e</string>
+    <string name="item4_price">7e</string>
+    <string name="item5_price">8e</string>
+    <string name="item6_price">3e</string>
+    <string name="item7_price">9e</string>
+    <string name="item8_price">10e</string>
+    <string name="item9_price">9e</string>
+    <string name="item10_price">10e</string>
+    <string name="item11_price">6e</string>
+    <string name="item12_price">9e</string>
+    <string name="item13_price">8e</string>
+    <string name="item14_price">15e</string>
+    <string name="item15_price">12e</string>
+    <string name="item16_price">6e</string>
+    <string name="item17_price">7e</string>
+    <string name="item18_price">11e</string>
+
+
+
 
 </resources>
