@@ -112,12 +112,12 @@ public final class ImageAdapter extends BaseAdapter {
         }
 
         picture = (ImageView) v.getTag(R.id.picture);
-        name = (TextView) v.getTag(R.id.text);
+        //name = (TextView) v.getTag(R.id.text);
 
         Item item = getItem(i);
 
         picture.setImageResource(item.drawableId);
-        name.setText(item.name);
+       // name.setText(item.name);
 
         return v;
     }
