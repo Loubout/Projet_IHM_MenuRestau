@@ -1,63 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <!-- everything you already have -->
 
-    <fragment android:name="com.example.willy.projet_ihm_android.description_food.DescriptionFood"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent">
-
-            <ImageView
-
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/food_img"
-                android:src="@drawable/blabla_img"
-
-                />
-
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content">
-
-                <TextView
-                    android:id="@+id/food_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="NOM DE LELEMENT"/>
-
-                <TextView
-                    android:id="@+id/food_desc"
-                    android:text="DESCRIPTION DE LELEMENT"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:id="@+id/food_prix"
-                    android:text="PRIX DE LELEMENT"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <Button
-                    android:id="@+id/buttonAddPanier"
-                    android:text="BOUTON VALIDER"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
 
-        </LinearLayout >
 
-    </fragment>
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/food_img"
+
+            android:src="@drawable/food_dessert_item6"
+            />
 
 
-</LinearLayout>
+
+        <TextView
+            android:id="@+id/food_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Truc bizarre"/>
+
+        <TextView
+            android:id="@+id/food_desc"
+            android:text="C'est l'histoire d'une feuille qui tomba dans l'eau et qui s'écria : J'AI PAS PIED !!! J'AI PAS PIED !!! \n\nC'est L'histoire d'une courgette qui court et qui se jete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/food_prix"
+            android:text="PRIX DE LA BLAGUE : 0.10€, pour le reste, il y a MASTERCARD !"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/buttonAddPanier"
+            android:text="BOUTON VALIDER"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</ScrollView>
