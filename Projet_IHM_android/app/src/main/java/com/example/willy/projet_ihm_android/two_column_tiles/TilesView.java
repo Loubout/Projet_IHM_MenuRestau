@@ -13,6 +13,7 @@ import com.example.willy.projet_ihm_android.R;
  * Created by lboutin on 07/04/16.
  */
 public class TilesView extends Activity {
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.two_column_tiles);
