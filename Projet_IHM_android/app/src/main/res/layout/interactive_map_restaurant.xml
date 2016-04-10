@@ -1,43 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/floor">
+
 
     <com.example.willy.projet_ihm_android.interactive_map.restaurant.TableImageView
         android:layout_width="100dp"
         android:layout_height="200dp"
         android:id="@+id/table1"
-        android:src="@drawable/table"
+        android:src="@drawable/horizontal_table_6_with_seats"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
 
+        />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_toLeftOf="@+id/table"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentStart="false"
-        android:layout_alignParentTop="false"
-        android:layout_alignLeft="@+id/table1"
-        android:layout_alignRight="@+id/table3">
 
     <com.example.willy.projet_ihm_android.interactive_map.restaurant.TableImageView
         android:layout_width="100dp"
         android:layout_height="200dp"
         android:id="@+id/table2"
-        android:src="@drawable/table"
-        android:layout_alignParentTop="true"
-        android:gravity="center"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="1"/>
-    </LinearLayout>
+        android:src="@drawable/horizontal_table_6_with_seats"
+        android:layout_toEndOf="@+id/table1"
+    />
 
     <com.example.willy.projet_ihm_android.interactive_map.restaurant.TableImageView
         android:layout_width="100dp"
         android:layout_height="200dp"
         android:id="@+id/table3"
-        android:src="@drawable/table"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
+        android:src="@drawable/horizontal_table_6_with_seats"
+        android:layout_toEndOf="@+id/table2"
+        />
+
+    <com.example.willy.projet_ihm_android.interactive_map.restaurant.TableImageView
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+        android:id="@+id/table4"
+        android:src="@drawable/horizontal_table_6_with_seats"
+        android:layout_toEndOf="@+id/table3"
+        android:layout_alignParentEnd="true"/>
+
+    <com.example.willy.projet_ihm_android.interactive_map.restaurant.TableImageView
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:id="@+id/table5"
+        android:src="@drawable/vertical_table_8_with_seats"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/table1"
+        android:layout_alignEnd="@+id/table2" />
+
+    <com.example.willy.projet_ihm_android.interactive_map.restaurant.TableImageView
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:id="@+id/table6"
+        android:src="@drawable/vertical_table_8_with_seats"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/table2" />
+
+    <com.example.willy.projet_ihm_android.interactive_map.restaurant.TableImageView
+        android:layout_width="174dp"
+        android:layout_height="682dp"
+        android:id="@+id/table7"
+        android:src="@drawable/horizontal_table_4_with_seats"
+        android:layout_alignStart="@+id/table4"
+        android:layout_below="@+id/table4"
+        android:layout_alignBottom="@+id/table5" />
+
+    <com.example.willy.projet_ihm_android.interactive_map.restaurant.TableImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/table8"
+        android:src="@drawable/horizontal_table_2_with_seats"
+        android:layout_below="@+id/table7"
+        android:layout_alignStart="@+id/table7" />
+
+    <com.example.willy.projet_ihm_android.interactive_map.restaurant.TableImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/table9"
+        android:src="@drawable/horizontal_table_2_with_seats"
+        android:layout_below="@+id/table8"
+        android:layout_alignStart="@+id/table8"
+        android:layout_alignParentEnd="true"/>
+
+
 </RelativeLayout>

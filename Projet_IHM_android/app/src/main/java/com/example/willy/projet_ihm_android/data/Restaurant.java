@@ -2,43 +2,39 @@ package com.example.willy.projet_ihm_android.data;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by tanguinoche on 07/04/16.
  */
-public class Restaurant implements Parcelable {
+public class Restaurant {
 
-    List<Table> tables;
+    private List<Table> tables;
 
-    public Restaurant(List<Table> tables) {
-        this.tables = tables;
 
+    public Restaurant() {
+          tables = new ArrayList<>();
     }
 
-
-    protected Restaurant(Parcel in) {
-        tables = in.createTypedArrayList(Table.CREATOR);
+    public Table getTable(int numero) {
+        for(Table table : tables) {
+            if(table.getNumero()==numero)
+                return table;
+        }
+        return null;
     }
 
-    public static final Creator<Restaurant> CREATOR = new Creator<Restaurant>() {
-        @Override
-        public Restaurant createFromParcel(Parcel in) {
-            return new Restaurant(in);
-        }
-
-        @Override
-        public Restaurant[] newArray(int size) {
-            return new Restaurant[size];
-        }
-    };
-
-    public int getNbTables() {
+    public int getNbTables()
+    {
+        Log.d("RESTAURANT_MODEL", "requested nbTables : "+tables.size());
         return tables.size();
     }
 
-    public int getNbPlaces() {
+    public int getNbPlaces()
+    {
         int sum=0;
         for(Table t : tables) {
             sum+=t.getNbPlaces();
@@ -46,17 +42,22 @@ public class Restaurant implements Parcelable {
         return sum;
     }
 
-    public List<Table> getTables() {
+    public List<Table> getTables()
+    {
         return tables;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
+    public void setTables(List<Table> tables)
+    {
+        this.tables = tables;
     }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeTypedList(tables);
+    public String toString()
+    {
+        StringBuilder sb = new StringBuilder("Restaurant :\n[\n");
+        for(Table t : tables)
+            sb.append(t.toString());
+        sb.append("]\n");
+        return sb.toString();
     }
 }

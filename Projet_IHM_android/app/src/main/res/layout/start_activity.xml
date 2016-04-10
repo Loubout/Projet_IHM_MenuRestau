@@ -6,7 +6,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Afficher carte intéractive"
-        android:id="@+id/button"
+        android:id="@+id/buttonMap"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Afficher les clients"
+        android:id="@+id/buttonClients"
+        android:layout_below="@+id/buttonMap"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Afficher les commandes"
+        android:id="@+id/buttonCommands"
+        android:layout_below="@+id/buttonClients"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp" />
 </RelativeLayout>

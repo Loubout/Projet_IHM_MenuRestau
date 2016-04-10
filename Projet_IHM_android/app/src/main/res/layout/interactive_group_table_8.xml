@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:background="@drawable/floor">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="400dp"
+            android:id="@+id/table"
+            android:src="@drawable/horizontal_table_8"
+            android:clickable="true"
+            android:layout_centerHorizontal="true"
+            />
+
+
+        <com.example.willy.projet_ihm_android.interactive_map.table.ChairImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/right1"
+            android:src="@drawable/right_gray"
+            android:layout_alignTop="@+id/table"
+            android:layout_toRightOf="@+id/table"
+            android:clickable="true"/>
+
+        <com.example.willy.projet_ihm_android.interactive_map.table.ChairImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/right2"
+            android:src="@drawable/right_gray"
+            android:layout_below="@+id/right1"
+            android:layout_toRightOf="@+id/table"
+            android:clickable="true"/>
+
+        <com.example.willy.projet_ihm_android.interactive_map.table.ChairImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/right3"
+            android:src="@drawable/right_gray"
+            android:layout_below="@+id/right2"
+            android:layout_toRightOf="@+id/table"
+            android:clickable="true"/>
+
+        <com.example.willy.projet_ihm_android.interactive_map.table.ChairImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/right4"
+            android:src="@drawable/right_gray"
+            android:gravity="bottom"
+            android:layout_toRightOf="@+id/table"
+            android:layout_alignBottom="@+id/table"
+            android:clickable="true"/>
+
+
+        <com.example.willy.projet_ihm_android.interactive_map.table.ChairImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/left1"
+            android:src="@drawable/left_gray"
+            android:layout_alignTop="@+id/table"
+            android:layout_toLeftOf="@+id/table"
+            android:clickable="true"/>
+        <com.example.willy.projet_ihm_android.interactive_map.table.ChairImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/left2"
+            android:src="@drawable/left_gray"
+            android:layout_below="@+id/right1"
+            android:layout_toLeftOf="@+id/table"
+            android:clickable="true"/>
+        <com.example.willy.projet_ihm_android.interactive_map.table.ChairImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/left3"
+            android:src="@drawable/left_gray"
+            android:layout_below="@+id/left2"
+            android:layout_toLeftOf="@+id/table"
+            android:clickable="true"/>
+
+        <com.example.willy.projet_ihm_android.interactive_map.table.ChairImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/left4"
+            android:src="@drawable/left_gray"
+            android:layout_gravity="bottom"
+            android:layout_alignBottom="@+id/table"
+            android:layout_toLeftOf="@+id/table"
+            android:clickable="true"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Activer mode enfant"
+            android:id="@+id/childMode"
+            android:layout_marginTop="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/doOrder" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prendre commande client"
+            android:id="@+id/doOrder"
+            android:layout_marginTop="77dp"
+            android:layout_below="@+id/table"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Table"
+            android:layout_alignParentTop="true"
+            android:layout_alignEnd="@+id/table"
+            android:layout_toEndOf="@+id/left1"
+            android:layout_alignBottom="@+id/left1"
+            android:gravity="center_horizontal"
+            android:id="@+id/num_table" />
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

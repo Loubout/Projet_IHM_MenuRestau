@@ -3,7 +3,6 @@ package com.example.willy.projet_ihm_android.interactive_map.table;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,12 +12,14 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.example.willy.projet_ihm_android.R;
 import com.example.willy.projet_ihm_android.data.Chair;
+import com.example.willy.projet_ihm_android.data.Client;
+import com.example.willy.projet_ihm_android.data.DataController;
 import com.example.willy.projet_ihm_android.data.Restaurant;
 import com.example.willy.projet_ihm_android.data.Table;
-import com.example.willy.projet_ihm_android.interactive_map.GroupActivity;
+import com.example.willy.projet_ihm_android.data.enumeration.Color;
+import com.example.willy.projet_ihm_android.interactive_map.group.GroupActivity;
 
 import java.util.AbstractMap;
 import java.util.ArrayList;
@@ -28,48 +29,108 @@ import java.util.List;
  * Created by tanguinoche on 22/03/16.
  */
 public class TableActivity extends Activity implements AdapterView.OnItemClickListener{
-    public final static String GROUP = "com.example.willy.projet_ihm_android.interactive_map_table.GROUP";
 
     //Table with chairs
     ChairGroupListener tableView;
+    List<Chair> chairs;
 
     //List View with adapter
     ListView groups;
     GroupAdapter adapter;
     List<AbstractMap.SimpleEntry<Integer,List<ChairImageView>>> data;
+    Table table;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("AAA", "Activity ListViewExample started");
-
-        setContentView(R.layout.interactive_map_table);
-
         Bundle b = getIntent().getExtras();
-        Table table = (Table)b.getParcelable("table");
-        List<Chair> chairs = table.getChairs();
+        Restaurant r = DataController.getInstance().getRestaurant();
+        table = r.getTable(b.getInt("num_table"));
+        chairs = table.getChairs();
+        List<ChairImageView> chairView = new ArrayList<ChairImageView>();
+
+
+        ChairImageView chair;
+
+
+        if(table.getNbPlaces()==2) {
+            setContentView(R.layout.interactive_map_table_2);
+            chair = (ChairImageView) findViewById(R.id.left1);
+            chair.setChairModel(chairs.get(0));
+            chairView.add(chair);
+            chair = (ChairImageView) findViewById(R.id.right1);
+            chair.setChairModel(chairs.get(1));
+            chairView.add(chair);
+
+        } else if(table.getNbPlaces()==4) {
+            setContentView(R.layout.interactive_map_table_4);
+            chair = (ChairImageView) findViewById(R.id.left1);
+            chair.setChairModel(chairs.get(0));
+            chairView.add(chair);
+            chair = (ChairImageView) findViewById(R.id.right1);
+            chair.setChairModel(chairs.get(1));
+            chairView.add(chair);
+            chair = (ChairImageView) findViewById(R.id.left2);
+            chair.setChairModel(chairs.get(2));
+            chairView.add(chair);
+            chair = (ChairImageView) findViewById(R.id.right2);
+            chair.setChairModel(chairs.get(3));
+            chairView.add(chair);
+
+        } else if(table.getNbPlaces()==6) {
+            setContentView(R.layout.interactive_map_table_6);
+            chair = (ChairImageView) findViewById(R.id.left1);
+            chair.setChairModel(chairs.get(0));
+            chairView.add(chair);
+            chair = (ChairImageView) findViewById(R.id.right1);
+            chair.setChairModel(chairs.get(1));
+            chairView.add(chair);
+            chair = (ChairImageView) findViewById(R.id.left2);
+            chair.setChairModel(chairs.get(2));
+            chairView.add(chair);
+            chair = (ChairImageView) findViewById(R.id.right2);
+            chair.setChairModel(chairs.get(3));
+            chairView.add(chair);
+            chair = (ChairImageView) findViewById(R.id.left3);
+            chair.setChairModel(chairs.get(4));
+            chairView.add(chair);
+            chair = (ChairImageView) findViewById(R.id.right3);
+            chair.setChairModel(chairs.get(5));
+            chairView.add(chair);
+
+        } else if(table.getNbPlaces()==8) {
+            setContentView(R.layout.interactive_map_table_8);
+            chair = (ChairImageView) findViewById(R.id.left1);
+            chair.setChairModel(chairs.get(0));
+            chairView.add(chair);
+            chair = (ChairImageView) findViewById(R.id.right1);
+            chair.setChairModel(chairs.get(1));
+            chairView.add(chair);
+            chair = (ChairImageView) findViewById(R.id.left2);
+            chair.setChairModel(chairs.get(2));
+            chairView.add(chair);
+            chair = (ChairImageView) findViewById(R.id.right2);
+            chair.setChairModel(chairs.get(3));
+            chairView.add(chair);
+            chair = (ChairImageView) findViewById(R.id.left3);
+            chair.setChairModel(chairs.get(4));
+            chairView.add(chair);
+            chair = (ChairImageView) findViewById(R.id.right3);
+            chair.setChairModel(chairs.get(5));
+            chairView.add(chair);
+            chair = (ChairImageView) findViewById(R.id.left4);
+            chair.setChairModel(chairs.get(6));
+            chairView.add(chair);
+            chair = (ChairImageView) findViewById(R.id.right4);
+            chair.setChairModel(chairs.get(7));
+            chairView.add(chair);
+
+        }
+
 
         TextView num_table = (TextView) findViewById(R.id.num_table);
-        num_table.setText("Table "+table.getNumero());
+        num_table.setText("Table " + table.getNumero());
 
-        ChairImageView chair1 = (ChairImageView) findViewById(R.id.left1);
-        chair1.setChairModel(chairs.get(0));
-        ChairImageView chair2 = (ChairImageView) findViewById(R.id.left2);
-        chair2.setChairModel(chairs.get(1));
-        ChairImageView chair3 = (ChairImageView) findViewById(R.id.left3);
-        chair3.setChairModel(chairs.get(2));
-        ChairImageView chair4 = (ChairImageView) findViewById(R.id.right1);
-        chair4.setChairModel(chairs.get(3));
-        ChairImageView chair5 = (ChairImageView) findViewById(R.id.right2);
-        chair5.setChairModel(chairs.get(4));
-        ChairImageView chair6 = (ChairImageView) findViewById(R.id.right3);
-        chair6.setChairModel(chairs.get(5));
-        List<ChairImageView> chairView = new ArrayList<ChairImageView>();
-        chairView.add(chair1);
-        chairView.add(chair2);
-        chairView.add(chair3);
-        chairView.add(chair4);
-        chairView.add(chair5);
-        chairView.add(chair6);
         groups = (ListView)findViewById(R.id.listViewGroupsTable);
         data = new ArrayList<AbstractMap.SimpleEntry<Integer,List<ChairImageView>>>();
         adapter = new GroupAdapter(data);
@@ -78,14 +139,31 @@ public class TableActivity extends Activity implements AdapterView.OnItemClickLi
 
         tableView = new ChairGroupListener(chairView, data, adapter);
 
+    }
 
+    @Override protected void onStart() {
+        super.onStart();
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Log.d("TABLEACTIVITY", "BUTTON BACK HAS BEEN PRESS");
+        //TODO : C'est ici qu'on ajoute réellement les clients aux chaises.
+        for(Chair c : chairs) {
+            if(c.getColor() != 0)
+                DataController.getInstance().addReservation(new Client(), c);
+        }
+        super.onBackPressed();
     }
 
 
     @Override public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         //Nouvelle activité pour plus de détails par exemple !
         Intent descrGroupActivity = new Intent(TableActivity.this, GroupActivity.class);
-        descrGroupActivity.putExtra(GROUP, data.get(position).getKey());
+        int groupColor=data.get(position).getKey();
+        descrGroupActivity.putExtra("groupColor", groupColor);
+        descrGroupActivity.putExtra("num_table", table.getNumero());
         startActivity(descrGroupActivity);
     }
 
@@ -93,8 +171,6 @@ public class TableActivity extends Activity implements AdapterView.OnItemClickLi
 
         LayoutInflater inflater;
         List<AbstractMap.SimpleEntry<Integer,List<ChairImageView>>> data;
-        private Integer GRAY=0, GREEN=1, YELLOW=2, TURQUOISE=3, ORANGE=4, PURPLE=5,
-                BLUE=6, RED=7, PINK=8, GROWN=9;
 
         public GroupAdapter(List<AbstractMap.SimpleEntry<Integer,List<ChairImageView>>> data){
             this.data = data;
@@ -124,15 +200,15 @@ public class TableActivity extends Activity implements AdapterView.OnItemClickLi
             TextView value = (TextView)v.findViewById(R.id.rightrow);
 
             int colorGroup=data.get(position).getKey();
-            if(colorGroup==GREEN) title.setBackgroundColor(Color.parseColor("#2e8c19"));
-            else if(colorGroup==YELLOW) title.setBackgroundColor(Color.parseColor("#ffea00"));
-            else if(colorGroup==TURQUOISE) title.setBackgroundColor(Color.parseColor("#3fffef"));
-            else if(colorGroup==ORANGE) title.setBackgroundColor(Color.parseColor("#ff7e00"));
-            else if(colorGroup==PURPLE) title.setBackgroundColor(Color.parseColor("#cc00ff"));
-            else if(colorGroup==BLUE) title.setBackgroundColor(Color.parseColor("#2a00ff"));
-            else if(colorGroup==RED) title.setBackgroundColor(Color.parseColor("#e30015"));
-            else if(colorGroup==PINK) title.setBackgroundColor(Color.parseColor("#ff62fd"));
-            else if(colorGroup==GROWN) title.setBackgroundColor(Color.parseColor("#572b00"));
+            if(colorGroup==Color.GREEN) title.setBackgroundColor(Color.parseColor("#2e8c19"));
+            else if(colorGroup==Color.YELLOW) title.setBackgroundColor(Color.parseColor("#ffea00"));
+            else if(colorGroup==Color.TURQUOISE) title.setBackgroundColor(Color.parseColor("#3fffef"));
+            else if(colorGroup==Color.ORANGE) title.setBackgroundColor(Color.parseColor("#ff7e00"));
+            else if(colorGroup==Color.PURPLE) title.setBackgroundColor(Color.parseColor("#cc00ff"));
+            else if(colorGroup==Color.BLUE) title.setBackgroundColor(Color.parseColor("#2a00ff"));
+            else if(colorGroup==Color.RED) title.setBackgroundColor(Color.parseColor("#e30015"));
+            else if(colorGroup==Color.PINK) title.setBackgroundColor(Color.parseColor("#ff62fd"));
+            else if(colorGroup==Color.GROWN) title.setBackgroundColor(Color.parseColor("#572b00"));
 
 
             title.setText("Groupe "+Character.toChars(position+65)[0]);

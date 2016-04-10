@@ -4,6 +4,8 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.example.willy.projet_ihm_android.interactive_map.group.GroupActivity;
+
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +31,7 @@ public class ChairGroupListener implements View.OnTouchListener, View.OnLongClic
             chair.setOnTouchListener(this);
             chair.setOnLongClickListener(this);
         }
+        updateData(); //Initialiser les groupes
     }
 
     @Override public boolean onTouch(View chair, MotionEvent event) {
@@ -49,7 +52,7 @@ public class ChairGroupListener implements View.OnTouchListener, View.OnLongClic
                 if((v = findViewOnCoordinates(x, y))!=null && !chairsSelected.contains(v))
                 {
                     int color = chairsSelected.get(0).getColor();
-                    ((ChairImageView)v).setColor(color);
+                    v.setColor(color);
                     chairsSelected.add(v);
                 }
                 Log.d("MOTION_EVENT", "move on chair "+chairs.lastIndexOf(v));
@@ -114,7 +117,7 @@ public class ChairGroupListener implements View.OnTouchListener, View.OnLongClic
                 if(!foundGroup) {
                     List<ChairImageView> group = new ArrayList<ChairImageView>(6);
                     group.add(chair);
-                    data.add(new AbstractMap.SimpleEntry<Integer,List<ChairImageView>>(colorGroup, group));
+                    data.add(new AbstractMap.SimpleEntry<>(colorGroup, group));
                 }
             }
         }

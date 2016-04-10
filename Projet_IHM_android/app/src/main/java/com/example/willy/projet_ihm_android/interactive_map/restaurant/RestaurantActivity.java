@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.View;
 
 import com.example.willy.projet_ihm_android.R;
+import com.example.willy.projet_ihm_android.data.Chair;
+import com.example.willy.projet_ihm_android.data.DataController;
 import com.example.willy.projet_ihm_android.data.Restaurant;
 import com.example.willy.projet_ihm_android.data.Table;
 import com.example.willy.projet_ihm_android.interactive_map.table.TableActivity;
@@ -24,17 +26,12 @@ public class RestaurantActivity extends Activity implements View.OnClickListener
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("AAA", "Activity interactive map restaurant started");
 
-        Bundle b = getIntent().getExtras();
-        restaurant = (Restaurant)b.getParcelable("restaurant");
-
-        //Il reçoit restaurant via son start_activity
+        restaurant = DataController.getInstance().getRestaurant();
         List<Table> tables = restaurant.getTables();
 
-        //Ici, on représente le restaurant qui compte 1 table, on lance le layout associé, et on récupère ImageView des tables sur le layout
         tableViews = new ArrayList<>();
-        if(restaurant.getNbTables() == 3) {
+        if(restaurant.getNbTables() == 9) {
             setContentView(R.layout.interactive_map_restaurant);
             TableImageView t = (TableImageView)findViewById(R.id.table1);
             t.setTable(restaurant.getTables().get(0));
@@ -44,6 +41,24 @@ public class RestaurantActivity extends Activity implements View.OnClickListener
             tableViews.add(t);
             t = (TableImageView)findViewById(R.id.table3);
             t.setTable(restaurant.getTables().get(2));
+            tableViews.add(t);
+            t = (TableImageView)findViewById(R.id.table4);
+            t.setTable(restaurant.getTables().get(3));
+            tableViews.add(t);
+            t = (TableImageView)findViewById(R.id.table5);
+            t.setTable(restaurant.getTables().get(4));
+            tableViews.add(t);
+            t = (TableImageView)findViewById(R.id.table6);
+            t.setTable(restaurant.getTables().get(5));
+            tableViews.add(t);
+            t = (TableImageView)findViewById(R.id.table7);
+            t.setTable(restaurant.getTables().get(6));
+            tableViews.add(t);
+            t = (TableImageView)findViewById(R.id.table8);
+            t.setTable(restaurant.getTables().get(7));
+            tableViews.add(t);
+            t = (TableImageView)findViewById(R.id.table9);
+            t.setTable(restaurant.getTables().get(8));
             tableViews.add(t);
         }
 
@@ -56,7 +71,7 @@ public class RestaurantActivity extends Activity implements View.OnClickListener
     public void onClick(View tableView) {
         Table table = ((TableImageView) tableView).getTable();
         Intent descrGroupActivity = new Intent(RestaurantActivity.this, TableActivity.class);
-        descrGroupActivity.putExtra("table", table);
+        descrGroupActivity.putExtra("num_table", table.getNumero());
         startActivity(descrGroupActivity);
     }
 }
