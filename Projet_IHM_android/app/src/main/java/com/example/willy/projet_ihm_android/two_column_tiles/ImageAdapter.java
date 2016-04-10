@@ -76,9 +76,9 @@ public final class ImageAdapter extends BaseAdapter {
         imgAdapt.mItems.add(new Item("Little Tickle", R.drawable.food_boisson_3));
         imgAdapt.mItems.add(new Item("Vanilla Pear Drop", R.drawable.food_boisson_4));
         imgAdapt.mItems.add(new Item("Blue Hawaiian", R.drawable.food_boisson_5));
-     /*   imgAdapt.mItems.add(new Item("Mary Pickford", R.drawable.food_boisson_6));
+        imgAdapt.mItems.add(new Item("Mary Pickford", R.drawable.food_boisson_6));
         imgAdapt.mItems.add(new Item("Winter Daiquiri", R.drawable.food_boisson_7));
-        imgAdapt.mItems.add(new Item("Marseillan", R.drawable.food_boisson_8));*/
+        imgAdapt.mItems.add(new Item("Marseillan", R.drawable.food_boisson_8));
         return imgAdapt;
     }
 

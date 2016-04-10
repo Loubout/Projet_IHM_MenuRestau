@@ -14,7 +14,7 @@ public class TileImageView extends ImageView {
     }
 
     private boolean scaleToWidth = false;
-    
+
     public TileImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.setScaleType(ScaleType.CENTER_INSIDE);
