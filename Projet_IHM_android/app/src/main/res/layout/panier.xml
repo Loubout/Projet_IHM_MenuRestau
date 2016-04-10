@@ -9,8 +9,8 @@ android:paddingBottom="@dimen/activity_vertical_margin"
 android:paddingLeft="@dimen/activity_horizontal_margin"
 android:paddingRight="@dimen/activity_horizontal_margin"
 android:paddingTop="@dimen/activity_vertical_margin"
-tools:context="com.example.willy.projet_ihm_android.Panier" >
-
+tools:context="com.example.willy.projet_ihm_android.Panier"
+    android:background="#ffffff">
     <TextView
         android:id="@+id/panierText"
         android:padding="10dp"
@@ -25,7 +25,6 @@ tools:context="com.example.willy.projet_ihm_android.Panier" >
 
     <TextView
         android:id="@+id/platText"
-        android:layout_below="@id/panierText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="@android:style/TextAppearance.Large"
@@ -33,36 +32,36 @@ tools:context="com.example.willy.projet_ihm_android.Panier" >
         android:textColor="@android:color/black"
         android:textStyle="bold"
         tools:text="Plat"
-        android:text="commande"
-        />
+        android:text="Produits"
+        android:layout_below="@+id/panierText"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/quantiteText" />
 
     <TextView
         android:id="@+id/quantiteText"
-        android:layout_below="@id/panierText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="@android:style/TextAppearance.Large"
         android:padding="10dp"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:layout_toRightOf="@id/platText"
         tools:text="Quantite"
-        android:text="Quantite"
-        />
+        android:text="Nombre"
+        android:layout_below="@+id/panierText"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/prixText"
-        android:layout_below="@id/panierText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="@android:style/TextAppearance.Large"
         android:padding="10dp"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:layout_toRightOf="@id/quantiteText"
         tools:text="prix"
         android:text="Prix"
-        />
+        android:layout_below="@+id/panierText"
+        android:layout_alignEnd="@+id/panierText" />
 
 
     <Button
@@ -73,9 +72,10 @@ tools:context="com.example.willy.projet_ihm_android.Panier" >
         android:padding="10dp"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:layout_alignParentBottom="true"
         tools:text="Retour"
-        />
+        android:text="Retour"
+        android:layout_above="@+id/boutonServeur"
+        android:layout_alignParentStart="true" />
     <Button
         android:id="@+id/buttonValiderCommande"
         android:layout_width="wrap_content"
@@ -84,9 +84,11 @@ tools:context="com.example.willy.projet_ihm_android.Panier" >
         android:padding="10dp"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@id/retourMenu"
-        tools:text="Valider" />
+        tools:text="Valider"
+        android:layout_below="@+id/retourMenu"
+        android:layout_alignParentEnd="true"
+        android:text="valider commande"
+        android:layout_toEndOf="@+id/boutonServeur" />
     <TextView
         android:id="@+id/total"
         android:layout_width="wrap_content"
@@ -95,20 +97,11 @@ tools:context="com.example.willy.projet_ihm_android.Panier" >
         android:padding="10dp"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@id/buttonValiderCommande"
         tools:text="Total:"
-        android:text="Total: "/>
-    <TextView
-        android:id="@+id/valeurTotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="@android:style/TextAppearance.Large"
-        android:padding="10dp"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@id/total" />
+        android:text="Total: "
+        android:layout_alignTop="@+id/retourMenu"
+        android:layout_toStartOf="@+id/prixText" />
+
     <TextView
         android:id="@+id/euro"
         android:layout_width="wrap_content"
@@ -117,17 +110,51 @@ tools:context="com.example.willy.projet_ihm_android.Panier" >
         android:padding="10dp"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@id/valeurTotal"
-        android:text="€"/>
+        android:text="€"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/total" />
     <ListView
         android:id="@+id/listView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/platText"
-        android:layout_above="@id/retourMenu"
-        >
+        android:layout_below="@+id/platText"
+        android:layout_alignParentStart="true"
+        android:divider="@android:color/black"
+        android:dividerHeight="4px"
+        android:layout_alignBottom="@+id/view">
     </ListView>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        android:layout_below="@id/panierText" />
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="4dp"
+        android:background="@android:color/black"
+        android:layout_above="@+id/total"
+        android:id="@+id/view" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/totalprix"
+        android:layout_alignTop="@+id/euro"
+        android:layout_alignBottom="@+id/total"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:padding="10dp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+
+        android:layout_toEndOf="@+id/total" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Appel Serveur"
+        android:id="@+id/boutonServeur"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
 
 
-    </RelativeLayout>
+</RelativeLayout>
