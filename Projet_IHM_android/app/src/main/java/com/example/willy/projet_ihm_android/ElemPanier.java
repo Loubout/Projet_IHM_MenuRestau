@@ -3,7 +3,7 @@ package com.example.willy.projet_ihm_android;
 import java.util.ArrayList;
 
 /**
- * Created by Kuroru on 2016/03/29.
+ * Created by Masa on 2016/03/29.
  */
 public class ElemPanier {
 

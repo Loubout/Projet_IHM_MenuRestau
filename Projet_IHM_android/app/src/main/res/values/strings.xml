@@ -3,7 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="text_empty"></string>
 
-    <string-array name="menuItems">
+    <string-array name="menuitems">
         <item>Apéritif</item>
         <item>Entrée</item>
         <item>Plat</item>
@@ -11,14 +11,108 @@
         <item>Boisson</item>
     </string-array>
 
-    <string name="aperitifItem">Apéritif</string>
-    <string name="entreeItem">Entrée</string>
-    <string name="platItem">Plat</string>
-    <string name="dessertItem">Dessert</string>
-    <string name="boissonItem">Boisson</string>
+    <string name="aperitifitem">Apéritif</string>
+    <string name="entreeitem">Entrée</string>
+    <string name="platitem">Plat</string>
+    <string name="dessertitem">Dessert</string>
+    <string name="boissonitem">Boisson</string>
 
     <string name="panier">Panier</string>
 
-    <string name="waiterCall">Appeler le serveur</string>
+    
+<string name="item10_name">
+Gyu no tataki</string>
+<string name="item10_desc">tranches de filet de boeuf marine au gingembre
+</string>
+<string name="item11_name">
+Hiyayakko</string>
+<string name="item11_desc">tofu,daikon et copeaux de bonite
+</string>
+<string name="item12_name">
+Karaage</string>
+<string name="item12_desc">poulet marine au gingembre et frit (7 pieces)
+</string>
+<string name="item13_name">
+Veloute edamame</string>
+<string name="item13_desc">feves de soja,dashi et oeuf mollet BIO
+</string>
+<string name="item14_name">
+Donburi shake miso</string>
+<string name="item14_desc">bol de riz garni de filet de boeuf emince,jaune d'oeuf et legumes
+</string>
+<string name="item15_name">
+Okonomiyaki</string>
+<string name="item15_desc">galette de chou a base de farine,oeuf bio,gingembre et cebette
+</string>
+<string name="item16_name">
+Takoyaki</string>
+<string name="item16_desc">bouchees chaudes, cuites a l'exterieur et fondantes a l'interieur garniture:poulpe sauces:classique
+</string>
+<string name="item17_name">
+Takoyaki spicy</string>
+<string name="item17_desc">bouchees chaudes, cuites a l'exterieur et fondantes a l'interieur garniture:poulpe sauces:spicy
+</string>
+<string name="item18_name">
+Yakisoba</string>
+<string name="item18_desc">nouilles sautees avec chiu,oignons,carottes,soja,cebette et gingembre
+</string>
+<string name="item1_name">
+Age Nasu</string>
+<string name="item1_desc">aubergines frites au miso
+</string>
+<string name="item2_name">
+Edamame</string>
+<string name="item2_desc">feves de soja cuites au sel
+</string>
+<string name="item3_name">
+Ohitashi</string>
+<string name="item3_desc">salade d'epinards frais,sauce sesame
+</string>
+<string name="item4_name">
+Creme brulee</string>
+<string name="item4_desc">creme au the Hojicha torrefie
+</string>
+<string name="item5_name">
+Tiramisu</string>
+<string name="item5_desc">tiramisu maison au the vert
+</string>
+<string name="item6_name">
+Mochi ice cream</string>
+<string name="item6_desc">the vert,vanille,sakura,myrtille,passion,mangue(1piece)
+</string>
+<string name="item7_name">
+Buta kimchi</string>
+<string name="item7_desc">poitrine de porc,legumes et chou pimente
+</string>
+<string name="item8_name">
+Chawanmushi</string>
+<string name="item8_desc">flan sale au poulet,crevette,shiitake et citron
+</string>
+<string name="item9_name">
+Ebi cream korokke</string>
+<string name="item9_desc">croquettes cremeuses aux crevettes
+</string>
+
+
+    <string name="item1_price">8e</string>
+    <string name="item2_price">5e</string>
+    <string name="item3_price">6e</string>
+    <string name="item4_price">7e</string>
+    <string name="item5_price">8e</string>
+    <string name="item6_price">3e</string>
+    <string name="item7_price">9e</string>
+    <string name="item8_price">10e</string>
+    <string name="item9_price">9e</string>
+    <string name="item10_price">10e</string>
+    <string name="item11_price">6e</string>
+    <string name="item12_price">9e</string>
+    <string name="item13_price">8e</string>
+    <string name="item14_price">15e</string>
+    <string name="item15_price">12e</string>
+    <string name="item16_price">6e</string>
+    <string name="item17_price">7e</string>
+    <string name="item18_price">11e</string>
+
+
 
 </resources>

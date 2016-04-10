@@ -9,6 +9,7 @@ import android.util.Log;
 import com.example.willy.projet_ihm_android.fragment_view.AperitifFragment;
 import com.example.willy.projet_ihm_android.fragment_view.BoissonFragment;
 import com.example.willy.projet_ihm_android.fragment_view.CarrousselFragment;
+import com.example.willy.projet_ihm_android.fragment_view.DescriptionFoodFragment;
 import com.example.willy.projet_ihm_android.fragment_view.DessertFragment;
 import com.example.willy.projet_ihm_android.fragment_view.EntreeFragment;
 import com.example.willy.projet_ihm_android.fragment_view.LeftPaneFragment;
@@ -16,7 +17,7 @@ import com.example.willy.projet_ihm_android.fragment_view.PaneFragment;
 import com.example.willy.projet_ihm_android.fragment_view.PlatFragment;
 import com.example.willy.projet_ihm_android.fragment_view.TopPaneFragment;
 
-public class MainActivity extends Activity implements LeftPaneFragment.OnArticleSelectedListener, EntreeFragment.OnArticleSelectedInEntreeFragmentListener {
+public class MainActivity extends Activity implements LeftPaneFragment.OnArticleSelectedListener {
 
     FragmentManager manager;
     FragmentTransaction transaction;
@@ -82,8 +83,12 @@ public class MainActivity extends Activity implements LeftPaneFragment.OnArticle
         return this.currentMainFragment;
     }
 
-    public void onArticleSelectedInEntreeFragmentListener(String data){
-
+    public void afficheDesc(String n, String d, String p){
+        manager = getFragmentManager();
+        transaction = manager.beginTransaction();
+        transaction.replace(  currentMainFragment.getId(), new DescriptionFoodFragment(n,d,p));
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
 

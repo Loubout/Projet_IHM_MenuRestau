@@ -6,7 +6,7 @@
         android:layout_height="wrap_content"
         android:verticalSpacing="0dp"
         android:horizontalSpacing="0dp"
-
+        android:background="#EEEEE0"
         android:numColumns="2">
 
 </com.origamilabs.library.views.StaggeredGridView>

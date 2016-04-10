@@ -25,13 +25,13 @@ public class TilesView extends Activity {
         StaggeredGridView gridview = (StaggeredGridView) findViewById(R.id.gridview);
         gridview.setAdapter(new ImageAdapter(this));
 
-        /*gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v,
+        gridview.setOnItemClickListener(new StaggeredGridView.OnItemClickListener() {
+            public void onItemClick(StaggeredGridView parent, View v,
                                     int position, long id) {
                 Toast.makeText(TilesView.this, "" + position,
                         Toast.LENGTH_SHORT).show();
             }
-        });*/
+        });
     }
 }
 

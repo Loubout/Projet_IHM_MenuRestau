@@ -6,7 +6,7 @@
         <com.example.willy.projet_ihm_android.carroussel_view.CarouselViewPager
         android:id="@+id/containerViewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
 
 
         <com.example.willy.projet_ihm_android.carroussel_view.CirclePageIndicator

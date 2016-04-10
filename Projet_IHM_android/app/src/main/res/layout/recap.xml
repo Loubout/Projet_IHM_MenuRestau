@@ -2,65 +2,49 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:gravity="left|center|right"
-    >
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:weightSum="1">
 
     <TextView
         android:id="@+id/plat"
-        android:layout_width="wrap_content"
+        android:layout_width="152dp"
         android:layout_height="wrap_content"
         android:textAppearance="@android:style/TextAppearance.Large"
         android:padding="10dp"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:gravity="left"
-        android:singleLine="true"
-        android:layout_marginLeft="10dip"
-        tools:text="Plat"
-        />
-
+        tools:text="Plat" />
     <TextView
         android:id="@+id/quantite"
-        android:layout_width="wrap_content"
+        android:layout_width="88dp"
         android:layout_height="wrap_content"
         android:textAppearance="@android:style/TextAppearance.Large"
         android:padding="10dp"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         tools:text="Quantite"
-        android:gravity="center"
-        android:singleLine="true"
-        android:layout_marginLeft="10dip"
-        />
+        android:text="Nombre" />
 
     <TextView
         android:id="@+id/prix"
-        android:layout_width="wrap_content"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:textAppearance="@android:style/TextAppearance.Large"
         android:padding="10dp"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        tools:text="prix"
-        android:gravity="center"
-        android:singleLine="true"
-        android:layout_marginLeft="10dip"
-        />
+        tools:text="prix" />
 
     <Button
         android:id="@+id/retirer"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="@android:style/TextAppearance.Large"
         android:padding="10dp"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        tools:text="retirer"
-        android:layout_alignParentRight="true"
-        android:singleLine="true"
-        android:layout_marginRight="10dip"
-        />
+        android:onClick="retirerItem"
+        tools:text="retirer" />
 
 </LinearLayout>
