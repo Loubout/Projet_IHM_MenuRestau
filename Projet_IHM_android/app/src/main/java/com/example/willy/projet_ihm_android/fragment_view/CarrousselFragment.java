@@ -54,19 +54,40 @@ public class CarrousselFragment extends PaneFragment {
                 public void onClick(View v) {
                     switch (pos){
                         case 0:
-                            act.afficheDesc("test","testdesc","testprix");
+
+                            act.afficheDesc(getActivity().getResources().getString(R.string.item1_name),
+                                    getActivity().getResources().getString(R.string.item1_desc),
+                                    getActivity().getResources().getString(R.string.item1_price),
+                                    getActivity().getResources().getDrawable(R.drawable.food_dessert_item4)
+                                    );
                             break;
                         case 1:
-
+                            act.afficheDesc(getActivity().getResources().getString(R.string.item2_name),
+                                    getActivity().getResources().getString(R.string.item2_desc),
+                                    getActivity().getResources().getString(R.string.item2_price),
+                                    getActivity().getResources().getDrawable(R.drawable.food_accompagnement_item2)
+                            );
                             break;
                         case 2:
-
+                            act.afficheDesc(getActivity().getResources().getString(R.string.item3_name),
+                                    getActivity().getResources().getString(R.string.item3_desc),
+                                    getActivity().getResources().getString(R.string.item3_price),
+                                    getActivity().getResources().getDrawable(R.drawable.food_accompagnement_item3)
+                            );
                             break;
                         case 3:
-
+                            act.afficheDesc(getActivity().getResources().getString(R.string.item4_name),
+                                    getActivity().getResources().getString(R.string.item4_desc),
+                                    getActivity().getResources().getString(R.string.item4_price),
+                                    getActivity().getResources().getDrawable(R.drawable.food_dessert_item4)
+                            );
                             break;
                         case 4:
-
+                            act.afficheDesc(getActivity().getResources().getString(R.string.item5_name),
+                                    getActivity().getResources().getString(R.string.item5_desc),
+                                    getActivity().getResources().getString(R.string.item5_price),
+                                    getActivity().getResources().getDrawable(R.drawable.food_dessert_item5)
+                            );
                             break;
                     }
 
