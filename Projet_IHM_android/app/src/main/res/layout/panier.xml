@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".panier.Panier"
-    android:background="#ffffff">
+    android:background="#FFE6CC">
 
 
     <TextView
@@ -34,7 +34,7 @@
         android:textColor="@android:color/black"
         android:textStyle="bold"
         tools:text="Plat"
-        android:text="Produits"
+        android:text="Produit"
         android:layout_below="@+id/panierText"
         android:layout_alignParentStart="true"
         android:paddingBottom="10dp"

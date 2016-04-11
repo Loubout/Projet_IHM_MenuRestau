@@ -49,14 +49,16 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
         super.onCreate(savedInstanceState);
         View view = inflater.inflate(R.layout.panier, container, false);
 
+        //On rempli monpanier
         monpanier = ((MainActivity) getActivity()).panier;
 
         //prix total de la commande
         total = 0;
 
+        //creation de la liste view
         mListView = (ListView) view.findViewById(R.id.commandeList);
 
-
+        //Remplissage de data pour affichage de la liste view
         data = new HashMap<Integer, ElemPanier>();
         for(int i = 0; i < monpanier.size(); i++) {
             ElemPanier tpanier = new ElemPanier(monpanier.get(i).getNomElem(), monpanier.get(i).getQuantites(), monpanier.get(i).getprix());
@@ -69,9 +71,9 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
         mListView.setAdapter(adapter);
         mListView.setOnItemClickListener(this);
 
+        //On gere les boutons de panier ici
 
-        //On gere les bouttons de panier ici
-
+        //Bouton valider avec dialogBox
         Button bvalider = (Button) view.findViewById(R.id.buttonValiderCommande);
         bvalider.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -92,9 +94,6 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
                                 adapter = new MyAdapter(data);
                                 mListView.setAdapter(adapter);
                                 monpanier.clear();
-
-                                System.out.println("===================HELLO=====");
-
                             }
                         })
                         .setNegativeButton("Non", new DialogInterface.OnClickListener() {
@@ -108,11 +107,12 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
         });
 
 
+        //bouton Vider panier avec dialogBox
         Button bclear = (Button) view.findViewById(R.id.clean);
         bclear.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity().findViewById(android.R.id.content).getContext());
-                builder.setMessage("Etesvous sure de supprimer toutes les commandes?")
+                builder.setMessage("Etes vous sur de supprimer toutes les commandes?")
                         .setCancelable(false)
                         .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
@@ -129,7 +129,6 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
                                 mListView.setAdapter(adapter);
                                 monpanier.clear();
 
-                                System.out.println("===================HELLO=====");
 
                             }
                         })
@@ -143,8 +142,7 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
             }
         });
 
-
-        System.out.println("TOTAL NOW" + total);
+        //affichage de total
         tot = (TextView) view.findViewById(R.id.totalprix);
         tot.setText(((Integer) total).toString());
         getActivity().findViewById(android.R.id.content).invalidate();
@@ -154,12 +152,14 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
         return view;
     }
 
+
+
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Toast.makeText(getActivity(), "Item" + position, Toast.LENGTH_LONG).show();
     }
 
-
+    //Adapter pour ListView
     public class MyAdapter extends BaseAdapter {
         LayoutInflater inflater;
         HashMap<Integer, ElemPanier> data;
@@ -170,7 +170,6 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
 
 
         }
-
 
         @Override
         public int getCount() {
@@ -199,22 +198,19 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
             final TextView quantiteCase = (TextView) v.findViewById(R.id.quantite);
             final TextView priceCase = (TextView) v.findViewById(R.id.prix);
 
-
-            System.out.print("=================="+data.get(position)+"===================");
             if (data.get(position) != null) {
                 final Integer nb = data.get(position).getQuantites();
                 final Integer pr = data.get(position).getprix();
 
+                //On gere les boutons de recap ici
 
+                //bouton retirer
                 ImageButton button = (ImageButton) v.findViewById(R.id.retirer);
                 button.setTag(position);
                 button.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
 
-                        //action de retirer
                         if (nb.intValue() == 1) {
-
-                            System.out.println("La valeur de data : "+position+" est de quantite 1");
                             int nnb = 0;
                             int npr = 0;
 
@@ -228,21 +224,7 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
                                 }
                             }
 
-/*                                 for(int i=0;i<data.size();i++){
-                                        System.out.println("//////////////////////////");
-                                        System.out.println("//Affichage de data :"+i);
-                                        System.out.println("//Nom de l'elem :"+data.get(i).getNomElem());
-                                        System.out.println("//prix :"+data.get(i).prix);
-                                        System.out.println("//nombre :"+data.get(i).getQuantites());
-                                        System.out.println("//Fin affichage");
-                                        System.out.println("//////////////////////////////");
-
-                                    }*/
-                            System.out.println("REMOVE "+position);
-
                             HashMap<Integer,ElemPanier>tmp=new HashMap<Integer, ElemPanier>(data);
-
-                            System.out.println("SIZE BEFORE"+data.size()+"==============");
                             data.remove(position);
                             notifyDataSetChanged();
 
@@ -250,10 +232,8 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
                             if(!data.isEmpty()) {
                                 int k = 0;
                                 for (int i = 0; i <tmp.size(); i++) {
-                                    System.out.println("POSITION ACTUELLE " + position + " Valeur de i " + i + " VALEUR DE DATASIZE "+tmp.size());
                                     if (position != i) {
                                         data.put(k, tmp.get(i));
-                                        System.out.println("PUT" + tmp.get(i).getNomElem() + "============== dans" + k);
                                         k++;
                                     }
                                 }
@@ -263,21 +243,8 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
                                 }
                             }
 
-                            System.out.println("SIZE AFTER"+data.size()+"==============");
-
-                            for(int i=0;i<data.size();i++){
-                                System.out.println("//////////////////////////");
-                                System.out.println("//Affichage de data :"+i);
-                                System.out.println("//Nom de l'elem :"+data.get(i).getNomElem());
-                                System.out.println("//prix :"+data.get(i).prix);
-                                System.out.println("//nombre :"+data.get(i).getQuantites());
-                                System.out.println("//Fin affichage");
-                                System.out.println("//////////////////////////////");
-
-                            }
                             notifyDataSetChanged();
                         } else {
-
                             int nnb = nb.intValue() - 1;
                             int npr = (pr.intValue() / (nnb + 1)) * nnb;
                             ElemPanier nelt = new ElemPanier(data.get(position).getNomElem(), nnb, npr);
@@ -294,24 +261,11 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
 
                 });
 
+                //bouton ajouter
                 ImageButton buttonadd = (ImageButton) v.findViewById(R.id.addItem);
                 buttonadd.setTag(position);
                 buttonadd.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
-
-                        //action de rajouter
-/*
-                                    for(int i=0;i<data.size();i++){
-                                        System.out.println("//////////////////////////");
-                                        System.out.println("//Affichage de data :"+i);
-                                        System.out.println("//Nom de l'elem :"+data.get(i).getNomElem());
-                                        System.out.println("//prix :"+data.get(i).prix);
-                                        System.out.println("//nombre :"+data.get(i).getQuantites());
-                                        System.out.println("//Fin affichage");
-                                        System.out.println("//////////////////////////////");
-
-                                    }*/
-
                         int nb = data.get(position).getQuantites() + 1;
                         int pr =(data.get(position).getprix()/(nb-1))*nb;
                         ElemPanier nelt = new ElemPanier(data.get(position).getNomElem(), nb, pr);
@@ -320,13 +274,11 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
                         monpanier.get(position).setQuantite(nb);
                         total = total +(data.get(position).getprix()/nb);
                         tot.setText(((Integer) total).toString());
-                        System.out.println("ADD " + position);
                         notifyDataSetChanged();
                     }
 
                 });
 
-                System.out.println("DATA: " + position + " NOM " + data.get(position).getNomElem() + "!!!!!!!!!!!!!!!!!!!!!!?????");
                 Integer nnb = data.get(position).getQuantites();
                 Integer npr = data.get(position).getprix();
                 ItemCase.setText(data.get(position).getNomElem());
