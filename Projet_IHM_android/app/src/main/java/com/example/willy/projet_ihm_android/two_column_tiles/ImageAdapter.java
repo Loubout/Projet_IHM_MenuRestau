@@ -30,9 +30,9 @@ public final class ImageAdapter extends BaseAdapter {
     // mais en fait non fuck it
     public static ImageAdapter getAperitifImageAdapter (Context context){
         ImageAdapter imgAdapt = new ImageAdapter(context);
-        imgAdapt.mItems.add(new Item("item1", R.drawable.food_accompagnement_item1));
-        imgAdapt.mItems.add(new Item("item2", R.drawable.food_accompagnement_item2));
-        imgAdapt.mItems.add(new Item("item3", R.drawable.food_accompagnement_item3));
+        imgAdapt.mItems.add(new Item("item1", R.drawable.food_accompagnement_item1, R.string.item1_name, R.string.item1_price));
+        imgAdapt.mItems.add(new Item("item2", R.drawable.food_accompagnement_item2, R.string.item2_name, R.string.item2_price));
+        imgAdapt.mItems.add(new Item("item3", R.drawable.food_accompagnement_item3, R.string.item3_name, R.string.item3_price));
         return imgAdapt;
     }
 
@@ -40,43 +40,43 @@ public final class ImageAdapter extends BaseAdapter {
 
     public static ImageAdapter getDessertsImageAdapter (Context context){
         ImageAdapter imgAdapt = new ImageAdapter(context);
-        imgAdapt.mItems.add(new Item("item4", R.drawable.food_dessert_item4));
-        imgAdapt.mItems.add(new Item("item6", R.drawable.food_dessert_item6));
-        imgAdapt.mItems.add(new Item("item5", R.drawable.food_dessert_item5));
+        imgAdapt.mItems.add(new Item("item4", R.drawable.food_dessert_item4, R.string.item4_name, R.string.item4_price));
+        imgAdapt.mItems.add(new Item("item6", R.drawable.food_dessert_item5, R.string.item5_name, R.string.item5_price));
+        imgAdapt.mItems.add(new Item("item5", R.drawable.food_dessert_item6, R.string.item6_name, R.string.item6_price));
         return imgAdapt;
     }
 
     public static ImageAdapter getDishesImageAdapter (Context context){
         ImageAdapter imgAdapt = new ImageAdapter(context);
-        imgAdapt.mItems.add(new Item("item14", R.drawable.food_plat_item14));
-        imgAdapt.mItems.add(new Item("item15", R.drawable.food_plat_item15));
-        imgAdapt.mItems.add(new Item("item16", R.drawable.food_plat_item16));
-        imgAdapt.mItems.add(new Item("item17", R.drawable.food_plat_item17));
-        imgAdapt.mItems.add(new Item("item18", R.drawable.food_plat_item18));
+        imgAdapt.mItems.add(new Item("item14", R.drawable.food_plat_item14, R.string.item14_name, R.string.item14_price));
+        imgAdapt.mItems.add(new Item("item15", R.drawable.food_plat_item15, R.string.item15_name, R.string.item15_price));
+        imgAdapt.mItems.add(new Item("item16", R.drawable.food_plat_item16, R.string.item16_name, R.string.item16_price));
+        imgAdapt.mItems.add(new Item("item17", R.drawable.food_plat_item17, R.string.item17_name, R.string.item17_price));
+        imgAdapt.mItems.add(new Item("item18", R.drawable.food_plat_item18, R.string.item18_name, R.string.item18_price));
         return imgAdapt;
     }
 
     public static ImageAdapter getEntreeImageAdapter(Context context){
         ImageAdapter imgAdapt = new ImageAdapter(context);
-        imgAdapt.mItems.add(new Item("item7", R.drawable.food_entree_item7));
-        imgAdapt.mItems.add(new Item("item8", R.drawable.food_entree_item8));
-        imgAdapt.mItems.add(new Item("item9", R.drawable.food_entree_item9));
-        imgAdapt.mItems.add(new Item("item10", R.drawable.food_entree_item10));
-        imgAdapt.mItems.add(new Item("item11", R.drawable.food_entree_item11));
-        imgAdapt.mItems.add(new Item("item12", R.drawable.food_entree_item12));
-        imgAdapt.mItems.add(new Item("item13", R.drawable.food_entree_item13));
+        imgAdapt.mItems.add(new Item("item7", R.drawable.food_entree_item7, R.string.item7_name, R.string.item7_price));
+        imgAdapt.mItems.add(new Item("item8", R.drawable.food_entree_item8, R.string.item8_name, R.string.item8_price));
+        imgAdapt.mItems.add(new Item("item9", R.drawable.food_entree_item9, R.string.item9_name, R.string.item9_price));
+        imgAdapt.mItems.add(new Item("item10", R.drawable.food_entree_item10, R.string.item10_name, R.string.item10_price));
+        imgAdapt.mItems.add(new Item("item11", R.drawable.food_entree_item11, R.string.item11_name, R.string.item11_price));
+        imgAdapt.mItems.add(new Item("item12", R.drawable.food_entree_item12, R.string.item12_name, R.string.item12_price));
+        imgAdapt.mItems.add(new Item("item13", R.drawable.food_entree_item13, R.string.item13_name, R.string.item13_price));
         return imgAdapt;
     }
 
     public static ImageAdapter getDrinksImageAdapter(Context context){
         ImageAdapter imgAdapt = new ImageAdapter(context);
-        imgAdapt.mItems.add(new Item("Cuba Libre", R.drawable.food_boisson_2));
-        imgAdapt.mItems.add(new Item("Little Tickle", R.drawable.food_boisson_3));
-        imgAdapt.mItems.add(new Item("Vanilla Pear Drop", R.drawable.food_boisson_4));
-        imgAdapt.mItems.add(new Item("Blue Hawaiian", R.drawable.food_boisson_5));
-        imgAdapt.mItems.add(new Item("Mary Pickford", R.drawable.food_boisson_6));
-        imgAdapt.mItems.add(new Item("Winter Daiquiri", R.drawable.food_boisson_7));
-        imgAdapt.mItems.add(new Item("Marseillan", R.drawable.food_boisson_8));
+        imgAdapt.mItems.add(new Item("item19", R.drawable.food_boisson_item19, R.string.item19_name, R.string.cocktail_price));
+        imgAdapt.mItems.add(new Item("item20", R.drawable.food_boisson_item20, R.string.item20_name, R.string.cocktail_price));
+        imgAdapt.mItems.add(new Item("item21", R.drawable.food_boisson_item21, R.string.item21_name, R.string.cocktail_price));
+        imgAdapt.mItems.add(new Item("item22", R.drawable.food_boisson_item22, R.string.item22_name, R.string.cocktail_price));
+        imgAdapt.mItems.add(new Item("item23", R.drawable.food_boisson_item23, R.string.item23_name, R.string.cocktail_price));
+        imgAdapt.mItems.add(new Item("item24", R.drawable.food_boisson_item24, R.string.item24_name, R.string.cocktail_price));
+        imgAdapt.mItems.add(new Item("item25", R.drawable.food_boisson_item25, R.string.item25_name, R.string.cocktail_price));
         return imgAdapt;
     }
 
@@ -110,12 +110,13 @@ public final class ImageAdapter extends BaseAdapter {
         }
 
         picture = (ImageView) v.getTag(R.id.picture);
-        //name = (TextView) v.getTag(R.id.text);
+        name = (TextView) v.getTag(R.id.text);
 
         Item item = getItem(i);
 
+
         picture.setImageResource(item.drawableId);
-       // name.setText(item.name);
+        name.setText(mInflater.getContext().getResources().getString(item.nameId) + " " + mInflater.getContext().getResources().getString(item.priceId));
 
         return v;
     }
@@ -123,10 +124,14 @@ public final class ImageAdapter extends BaseAdapter {
     public static class Item {
         public final String name;
         public final int drawableId;
+        public final int nameId;
+        public final int priceId;
 
-        Item(String name, int drawableId) {
+        Item(String name, int drawableId, int nameId, int priceId) {
             this.name = name;
             this.drawableId = drawableId;
+            this.nameId = nameId;
+            this.priceId = priceId;
         }
     }
 }
