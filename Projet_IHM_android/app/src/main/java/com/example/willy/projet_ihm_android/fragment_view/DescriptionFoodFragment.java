@@ -63,7 +63,7 @@ public class DescriptionFoodFragment extends PaneFragment {
                 for (ElemPanier e : activity.panier){
                     if (e.getNomElem() == name) elt = e;
                 }
-                int prix_int = Integer.parseInt(prix.substring(0, prix.length() - 2));
+                int prix_int = Integer.parseInt(prix.substring(0, prix.length() - 1));
                 if (elt == null) activity.panier.add(new ElemPanier(name, 1, prix_int));
                 else {
                     int old_q = elt.getQuantites();

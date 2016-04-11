@@ -17,6 +17,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.willy.projet_ihm_android.MainActivity;
 import com.example.willy.projet_ihm_android.R;
 import com.example.willy.projet_ihm_android.data.food.Dessert;
 import com.example.willy.projet_ihm_android.data.food.Drink;
@@ -35,8 +36,10 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
 
     ListView mListView;
     MyAdapter adapter;
+
     //liste des noms des items double tap ou element du panier
-    ArrayList<ItemAbstract> monpanier=new ArrayList<ItemAbstract>();
+    ArrayList<ElemPanier> monpanier;
+
     int total;
     TextView tot;
     HashMap<Integer,ElemPanier>data;
@@ -46,75 +49,18 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
         super.onCreate(savedInstanceState);
         View view = inflater.inflate(R.layout.panier, container, false);
 
-        //initialisation de mon panier (a enlever)
-
-        Plat p=new Plat("salade","blabla",10);
-        Plat p2=new Plat("steak","blabla",12);
-        Dessert d= new Dessert("ice cream","blabla",7);
-        Drink b = new Drink("okonomiyaki miso","blabla",3);
-        Drink b1 = new Drink("eau","blabla",1);
-
-        ArrayList<ProductAbstract> mp =new ArrayList<ProductAbstract>();
-        mp.add(b);
-        mp.add(d);
-        mp.add(p);
-
-        Menu m=new Menu("Menu A","entree plat dessert",16,mp);
-
-
-        monpanier.add(m);
-        monpanier.add(m);
-        monpanier.add(d);
-        monpanier.add(b);
-        monpanier.add(b);
-        monpanier.add(d);
-        monpanier.add(b1);
-        monpanier.add(d);
-        monpanier.add(p);
-        monpanier.add(p2);
-
-
-
-
-        //liste des elements qui vont etre affiche ligne par ligne.
-
-        HashMap<String, Integer> quantite = new HashMap<String, Integer>();
-        HashMap<String, Integer> prix = new HashMap<String, Integer>();
-        ArrayList<String> nom = new ArrayList<String>();
+        monpanier = ((MainActivity) getActivity()).panier;
 
         //prix total de la commande
         total = 0;
 
         mListView = (ListView) view.findViewById(R.id.commandeList);
 
-        if (!monpanier.isEmpty()) {
-            for (int i = 0; i < monpanier.size(); i++) {
-                String itemName = monpanier.get(i).getName();
-                int itemprix = monpanier.get(i).getPrice();
-
-
-                if (nom.contains(itemName)) {
-
-                    int currentq = quantite.get(itemName)+1;
-
-                    quantite.put(itemName, currentq);
-                    prix.put(itemName, itemprix * (currentq));
-
-                    System.out.println("Item " + itemName + " Prix " + itemprix + " Quantite "+currentq+" Prix tot "+prix.get(itemName));
-
-                } else {
-                    quantite.put(itemName,1);
-                    prix.put(itemName, itemprix);
-                    nom.add(itemName);
-                }
-            }
-        }
 
         data = new HashMap<Integer, ElemPanier>();
-        for(int i = 0; i < nom.size(); i++) {
-            ElemPanier tpanier = new ElemPanier(nom.get(i), quantite.get(nom.get(i)), prix.get(nom.get(i)));
-            total = total + prix.get(nom.get(i));
-
+        for(int i = 0; i < monpanier.size(); i++) {
+            ElemPanier tpanier = new ElemPanier(monpanier.get(i).getNomElem(), monpanier.get(i).getQuantites(), monpanier.get(i).getprix());
+            total = total + monpanier.get(i).getprix();
             data.put(i, tpanier);
         }
 
@@ -276,7 +222,7 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
                             tot.setText(((Integer) total).toString());
 
                             for(int i=0;i<monpanier.size();i++){
-                                if((monpanier.get(i).getName()==data.get(position).getNomElem())){
+                                if((monpanier.get(i).getNomElem()==data.get(position).getNomElem())){
                                     monpanier.remove(i);
                                     i=monpanier.size();
                                 }
@@ -329,17 +275,18 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
                                 System.out.println("//////////////////////////////");
 
                             }
-                            System.out.println("Value1!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                             notifyDataSetChanged();
                         } else {
+
                             int nnb = nb.intValue() - 1;
                             int npr = (pr.intValue() / (nnb + 1)) * nnb;
                             ElemPanier nelt = new ElemPanier(data.get(position).getNomElem(), nnb, npr);
                             data.put(position, nelt);
+                            monpanier.get(position).setQuantite(nnb);
+                            monpanier.get(position).setPrix(npr);
                             total = total - (pr.intValue() / (nnb + 1));
                             tot.setText(((Integer) total).toString());
                             notifyDataSetChanged();
-                            System.out.println("ValueLots!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
                         }
 
@@ -369,6 +316,8 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
                         int pr =(data.get(position).getprix()/(nb-1))*nb;
                         ElemPanier nelt = new ElemPanier(data.get(position).getNomElem(), nb, pr);
                         data.put(position,nelt);
+                        monpanier.get(position).setPrix(pr);
+                        monpanier.get(position).setQuantite(nb);
                         total = total +(data.get(position).getprix()/nb);
                         tot.setText(((Integer) total).toString());
                         System.out.println("ADD " + position);
