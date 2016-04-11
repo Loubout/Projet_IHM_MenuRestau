@@ -6,20 +6,6 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@android:id/list"/>
-
-    <TextView
-        android:id="@android:id/empty"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="menu/text_empty"/>
-
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@android:id/list"
         android:dividerHeight="12dp"
         />
