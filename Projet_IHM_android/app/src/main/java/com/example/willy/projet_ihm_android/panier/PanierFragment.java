@@ -107,6 +107,19 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
             }
         }
 
+        data = new HashMap<Integer, ElemPanier>();
+        for(int i = 0; i < nom.size(); i++) {
+            ElemPanier tpanier = new ElemPanier(nom.get(i), quantite.get(nom.get(i)), prix.get(nom.get(i)));
+            total = total + prix.get(nom.get(i));
+
+            data.put(i, tpanier);
+        }
+
+        // Creation de l'adapter de la listView
+        adapter = new MyAdapter(data);
+        mListView.setAdapter(adapter);
+        mListView.setOnItemClickListener(this);
+
         return view;
     }
 
@@ -184,8 +197,7 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
                                 }
                             }
 
-/*
-                                    for(int i=0;i<data.size();i++){
+/*                                 for(int i=0;i<data.size();i++){
                                         System.out.println("//////////////////////////");
                                         System.out.println("//Affichage de data :"+i);
                                         System.out.println("//Nom de l'elem :"+data.get(i).getNomElem());
@@ -194,10 +206,7 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
                                         System.out.println("//Fin affichage");
                                         System.out.println("//////////////////////////////");
 
-                                    }
-
-*/
-
+                                    }*/
                             System.out.println("REMOVE "+position);
 
                             HashMap<Integer,ElemPanier>tmp=new HashMap<Integer, ElemPanier>(data);
@@ -237,16 +246,6 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
                             }
                             System.out.println("Value1!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                             notifyDataSetChanged();
-
-
-
-
-
-
-
-
-
-
                         } else {
                             int nnb = nb.intValue() - 1;
                             int npr = (pr.intValue() / (nnb + 1)) * nnb;
@@ -273,7 +272,6 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
             } else {
 
             }
-
 
             return v;
         }
