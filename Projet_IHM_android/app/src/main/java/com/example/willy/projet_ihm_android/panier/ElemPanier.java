@@ -14,16 +14,13 @@ public class ElemPanier {
         this.prix=p;
         this.nomElem=nomE;
     }
-    public int getQuantites(){
-        return quantite;
+    public int getQuantites(){ return quantite; }
+    public int getprix(){ return prix; }
+    public String getNomElem(){ return nomElem; }
 
-    }
-    public int getprix(){
-        return prix;
-    }
+    public void setQuantite(int q){ this.quantite = q; }
+    public void setPrix(int p){ this.prix = p; }
 
-    public String getNomElem(){
-        return nomElem;
-    }
+
 
 }

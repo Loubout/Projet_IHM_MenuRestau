@@ -1,31 +1,36 @@
 package com.example.willy.projet_ihm_android.panier;
 
 
-import android.app.AlertDialog;
+import com.example.willy.projet_ihm_android.R;
+import com.example.willy.projet_ihm_android.data.food.Drink;
+import com.example.willy.projet_ihm_android.data.food.ItemAbstract;
+import com.example.willy.projet_ihm_android.data.food.Menu;
+import com.example.willy.projet_ihm_android.data.food.Plat;
+import com.example.willy.projet_ihm_android.data.food.Dessert;
+import com.example.willy.projet_ihm_android.data.food.ProductAbstract;
+
+import android.app.*;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.view.View;
+import android.widget.Button;
 
-import com.example.willy.projet_ihm_android.R;
-import com.example.willy.projet_ihm_android.data.food.Dessert;
-import com.example.willy.projet_ihm_android.data.food.Drink;
-import com.example.willy.projet_ihm_android.data.food.ItemAbstract;
-import com.example.willy.projet_ihm_android.data.food.Menu;
-import com.example.willy.projet_ihm_android.data.food.Plat;
-import com.example.willy.projet_ihm_android.data.food.ProductAbstract;
+
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 
 /**
  * Created by Masa on 2016/03/19.
@@ -71,6 +76,9 @@ public class Panier extends AppCompatActivity implements AdapterView.OnItemClick
         monpanier.add(d);
         monpanier.add(p);
         monpanier.add(p2);
+        monpanier.add(p2);
+        monpanier.add(p2);
+
 
 
 
@@ -164,25 +172,13 @@ public class Panier extends AppCompatActivity implements AdapterView.OnItemClick
         });
 
 
-        Button bretour = (Button) findViewById(R.id.retourMenu);
-        bretour.setOnClickListener(new View.OnClickListener() {
+        Button bclean = (Button) findViewById(R.id.clean);
+        bclean.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
                 data.clear();
-                //on intent et envoie monpanier a lactivite precedente
-                //on quitte lactivity
-                //on reviens sur lactivite precedente!!
+                monpanier.clear();
 
-
-
-            }
-        });
-
-        Button bserveur = (Button) findViewById(R.id.boutonServeur);
-        bretour.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //On gere le bouton ici
-                notify();
             }
         });
 
@@ -197,6 +193,7 @@ public class Panier extends AppCompatActivity implements AdapterView.OnItemClick
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Toast.makeText(this, "Item" + position, Toast.LENGTH_LONG).show();
+
     }
 
 
@@ -323,14 +320,6 @@ public class Panier extends AppCompatActivity implements AdapterView.OnItemClick
                             notifyDataSetChanged();
 
 
-
-
-
-
-
-
-
-
                         } else {
                             int nnb = nb.intValue() - 1;
                             int npr = (pr.intValue() / (nnb + 1)) * nnb;
@@ -347,14 +336,42 @@ public class Panier extends AppCompatActivity implements AdapterView.OnItemClick
 
                 });
 
+                Button buttonadd = (Button) v.findViewById(R.id.addItem);
+                buttonadd.setTag(position);
+                buttonadd.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+
+                        //action de rajouter
+/*
+                                    for(int i=0;i<data.size();i++){
+                                        System.out.println("//////////////////////////");
+                                        System.out.println("//Affichage de data :"+i);
+                                        System.out.println("//Nom de l'elem :"+data.get(i).getNomElem());
+                                        System.out.println("//prix :"+data.get(i).prix);
+                                        System.out.println("//nombre :"+data.get(i).getQuantites());
+                                        System.out.println("//Fin affichage");
+                                        System.out.println("//////////////////////////////");
+
+                                    }*/
+
+                        int nb = data.get(position).getQuantites() + 1;
+                        int pr =(data.get(position).getprix()/(nb-1))*nb;
+                        ElemPanier nelt = new ElemPanier(data.get(position).getNomElem(), nb, pr);
+                        data.put(position,nelt);
+                        total = total +(data.get(position).getprix()/nb);
+                        tot.setText(((Integer) total).toString());
+                        System.out.println("ADD " + position);
+                        notifyDataSetChanged();
+                    }
+
+                });
+
                 System.out.println("DATA: " + position + " NOM " + data.get(position).getNomElem() + "!!!!!!!!!!!!!!!!!!!!!!?????");
                 Integer nnb = data.get(position).getQuantites();
                 Integer npr = data.get(position).getprix();
                 ItemCase.setText(data.get(position).getNomElem());
                 quantiteCase.setText(nnb.toString());
                 priceCase.setText(npr.toString());
-
-            } else {
 
             }
 

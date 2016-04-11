@@ -1,50 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
     android:background="#ffffff"
-    android:weightSum="1">
+    >
 
     <TextView
         android:id="@+id/plat"
-        android:layout_width="152dp"
+        android:padding="10dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:textAppearance="@android:style/TextAppearance.Large"
-        android:padding="10dp"
+        android:layout_alignParentStart="true"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        tools:text="Plat" />
+        android:maxLength="11"
+        android:text="Commandes"
+        android:maxLines="2" />
     <TextView
         android:id="@+id/quantite"
-        android:layout_width="88dp"
+        android:layout_width="110dp"
+        android:padding="10dp"
         android:layout_height="wrap_content"
         android:textAppearance="@android:style/TextAppearance.Large"
-        android:padding="10dp"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        tools:text="Quantite"
-        android:text="Nombre" />
+        android:text="quantite"
+        android:layout_toRightOf="@+id/plat"
+        android:numeric="integer|decimal"
+        android:maxLength="2"
+        android:maxLines="1"
+        android:longClickable="false" />
 
     <TextView
         android:id="@+id/prix"
-        android:layout_width="70dp"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:textAppearance="@android:style/TextAppearance.Large"
-        android:padding="10dp"
         android:textColor="@android:color/black"
+        android:padding="10dp"
         android:textStyle="bold"
-        tools:text="prix" />
-
-    <Button
-        android:id="@+id/retirer"
-        android:layout_width="match_parent"
+        android:layout_toRightOf="@id/quantite"
+        android:text="prix"
+        android:maxLength="4"
+        android:maxLines="2" />
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="@android:style/TextAppearance.Large"
-        android:padding="10dp"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        android:onClick="retirerItem"
-        tools:text="retirer" />
+        android:layout_toEndOf="@+id/prix"
+        android:layout_alignParentEnd="true">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/addItem"
+            android:padding="10dp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:onClick="ajouterItem"
+            android:layout_weight="1"
+            android:src="@drawable/add"
+            android:background="@drawable/left_panel_item"
+            android:layout_marginRight="2dp"
+             />
 
-</LinearLayout>
+        <ImageButton
+            android:id="@+id/retirer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:padding="10dp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:onClick="retirerItem"
+            android:layout_weight="1"
+            android:src="@drawable/remove"
+            android:background="@drawable/left_panel_item"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>
