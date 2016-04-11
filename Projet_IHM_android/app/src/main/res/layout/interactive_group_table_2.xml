@@ -49,17 +49,21 @@
                 android:layout_height="wrap_content"
                 android:text="Activer mode enfant"
                 android:id="@+id/childMode"
+                android:background="@drawable/button_background"
                 android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="true"
+                android:visibility="invisible" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Prendre commande client"
+                android:background="@drawable/button_background"
                 android:id="@+id/doOrder"
                 android:layout_marginTop="77dp"
                 android:layout_below="@+id/childMode"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="true"
+                android:visibility="invisible" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -72,6 +76,43 @@
                 android:layout_alignBottom="@+id/left1"
                 android:gravity="center_horizontal"
                 android:id="@+id/num_table" />
+
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/childmode_right1"
+                android:layout_alignTop="@id/right1"
+                android:src="@drawable/baby_sticker"
+                android:layout_alignLeft="@+id/right1"
+                android:layout_margin="20dp"
+                android:visibility="invisible" />
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/childmode_left1"
+                android:layout_alignTop="@+id/left1"
+                android:layout_alignRight="@+id/left1"
+                android:src="@drawable/baby_sticker"
+                android:layout_margin="20dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/highlight_right1"
+                android:src="@drawable/horizontal_highlight2"
+                android:layout_toRightOf="@+id/table"
+                android:clickable="true"
+                android:visibility="invisible" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/highlight_left1"
+                android:src="@drawable/horizontal_highlight2"
+                android:layout_toLeftOf="@+id/table"
+                android:clickable="true"
+                android:visibility="invisible" />
 
 
         </RelativeLayout>
