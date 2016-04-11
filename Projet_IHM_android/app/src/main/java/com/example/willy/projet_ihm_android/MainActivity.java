@@ -21,6 +21,7 @@ import com.example.willy.projet_ihm_android.fragment_view.DescriptionFoodFragmen
 import com.example.willy.projet_ihm_android.fragment_view.DessertFragment;
 import com.example.willy.projet_ihm_android.fragment_view.EntreeFragment;
 import com.example.willy.projet_ihm_android.fragment_view.LeftPaneFragment;
+import com.example.willy.projet_ihm_android.fragment_view.MenuFragment;
 import com.example.willy.projet_ihm_android.fragment_view.PaneFragment;
 import com.example.willy.projet_ihm_android.fragment_view.PlatFragment;
 import com.example.willy.projet_ihm_android.panier.ElemPanier;
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements LeftPaneFragment.
         Toolbar mToolBar = (Toolbar) findViewById(R.id.topPaneToolbar);
         setSupportActionBar(mToolBar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        //getSupportActionBar().setIcon(R.drawable.logo_icon);
+
         TextView toolbartitle = (TextView) findViewById(R.id.titleActionBar);
         toolbartitle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,18 +80,7 @@ public class MainActivity extends AppCompatActivity implements LeftPaneFragment.
                 Toast.makeText(MainActivity.this, "logoIcon click", Toast.LENGTH_SHORT).show();
             }
         });
-/*
-        Field titleField = Toolbar.class.getDeclaredField("mTitleTextView");
-        titleField.setAccessible(true);
-        TextView barTitleView = (TextView) titleField.get(mToolBar);
-        barTitleView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Toast.makeText(MainActivity.this, "HELLO WORLD", Toast.LENGTH_SHORT).show();
-            }
-        });
-*/
         currentMainFragment = carrousselFragment;
 
         manager = getFragmentManager();
@@ -161,6 +151,10 @@ public class MainActivity extends AppCompatActivity implements LeftPaneFragment.
         }
         else if(data.equals("Boisson")){
             currentMainFragment = new BoissonFragment();
+            transaction.replace(R.id.mainPanel, currentMainFragment);
+        }
+        else if(data.equals("Menu")){
+            currentMainFragment = new MenuFragment();
             transaction.replace(R.id.mainPanel, currentMainFragment);
         }
         transaction.addToBackStack(null);
