@@ -18,7 +18,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/food_img"
 
-            android:src="@drawable/food_dessert_item6"
             />
 
 
@@ -27,24 +26,25 @@
             android:id="@+id/food_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Truc bizarre"/>
+            />
 
         <TextView
             android:id="@+id/food_desc"
-            android:text="C'est l'histoire d'une feuille qui tomba dans l'eau et qui s'écria : J'AI PAS PIED !!! J'AI PAS PIED !!! \n\nC'est L'histoire d'une courgette qui court et qui se jete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/food_prix"
-            android:text="PRIX DE LA BLAGUE : 0.10€, pour le reste, il y a MASTERCARD !"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/buttonAddPanier"
-            android:text="BOUTON VALIDER"
+            android:text="Ajouter au Panier"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="5px"
+            />
 
     </LinearLayout>
 
