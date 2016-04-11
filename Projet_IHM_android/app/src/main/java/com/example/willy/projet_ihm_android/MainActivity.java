@@ -14,7 +14,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.willy.projet_ihm_android.data.food.ItemAbstract;
 import com.example.willy.projet_ihm_android.fragment_view.AperitifFragment;
 import com.example.willy.projet_ihm_android.fragment_view.BoissonFragment;
 import com.example.willy.projet_ihm_android.fragment_view.CarrousselFragment;
@@ -24,6 +23,7 @@ import com.example.willy.projet_ihm_android.fragment_view.EntreeFragment;
 import com.example.willy.projet_ihm_android.fragment_view.LeftPaneFragment;
 import com.example.willy.projet_ihm_android.fragment_view.PaneFragment;
 import com.example.willy.projet_ihm_android.fragment_view.PlatFragment;
+import com.example.willy.projet_ihm_android.panier.ElemPanier;
 import com.example.willy.projet_ihm_android.panier.PanierFragment;
 
 import java.util.ArrayList;
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements LeftPaneFragment.
 
     PaneFragment currentMainFragment;
 
-    ArrayList<ItemAbstract> panier;
+    public ArrayList<ElemPanier> panier;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements LeftPaneFragment.
         Log.d("", "MainActivity started");
 
 
-        panier = new ArrayList<ItemAbstract>();
+        panier = new ArrayList<ElemPanier>();
 
         LeftPaneFragment leftMenuFragment = new LeftPaneFragment();
         CarrousselFragment carrousselFragment = new CarrousselFragment();
