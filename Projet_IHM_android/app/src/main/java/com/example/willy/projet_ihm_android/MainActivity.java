@@ -20,7 +20,6 @@ import com.example.willy.projet_ihm_android.fragment_view.EntreeFragment;
 import com.example.willy.projet_ihm_android.fragment_view.LeftPaneFragment;
 import com.example.willy.projet_ihm_android.fragment_view.PaneFragment;
 import com.example.willy.projet_ihm_android.fragment_view.PlatFragment;
-import com.example.willy.projet_ihm_android.fragment_view.TopPaneFragment;
 import com.example.willy.projet_ihm_android.panier.PanierFragment;
 
 public class MainActivity extends AppCompatActivity implements LeftPaneFragment.OnArticleSelectedListener {
@@ -35,7 +34,6 @@ public class MainActivity extends AppCompatActivity implements LeftPaneFragment.
         setContentView(R.layout.activity_main);
         Log.d("", "MainActivity started");
 
-        TopPaneFragment topPaneFragment = new TopPaneFragment();
         LeftPaneFragment leftMenuFragment = new LeftPaneFragment();
         CarrousselFragment carrousselFragment = new CarrousselFragment();
 
@@ -49,7 +47,6 @@ public class MainActivity extends AppCompatActivity implements LeftPaneFragment.
 
         transaction = manager.beginTransaction();
 
-        transaction.add(R.id.logoPanel, topPaneFragment, "topPaneFragment");
         transaction.add(R.id.leftSidePanel, leftMenuFragment, "leftMenuFragment");
         transaction.add(R.id.mainPanel, carrousselFragment, "mainFragment");
 
