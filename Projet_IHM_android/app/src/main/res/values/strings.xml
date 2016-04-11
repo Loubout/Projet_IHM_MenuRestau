@@ -115,6 +115,28 @@ Ebi cream korokke</string>
     <string name="item17_price">7e</string>
     <string name="item18_price">11e</string>
 
+    <string name="cocktail_price">10e</string>
+
+    <string name="item25_name">Blue Hawaiian</string>
+    <string name="item25_desc">From the sea-blue colour to the tropical flavours, this fruity pineapple cocktail makes you want to hit the beach.</string>
+
+    <string name="item24_name">Winter daiquiri</string>
+    <string name="item24_desc">This is an incredible twist on a classic daiquiri - the mix of zingy clementines and maple syrup is incredible</string>
+
+    <string name="item23_name">Mary Pickford</string>
+    <string name="item23_desc">Invented in Cuba for the silent movie star of the same name. Like her you\'ll be speechless when you try it</string>
+
+    <string name="item22_name">Vanilla pear drop</string>
+    <string name="item22_desc">You can make the delicious pear syrup in advance, making this a super-easy party cocktail</string>
+
+    <string name="item21_name">Bénédictine cocktail</string>
+    <string name="item21_desc">Bénédictine is a herbal liqueur made by monks and used in some of the world\'s most famous cocktails</string>
+
+    <string name="item20_name">Little tickle</string>
+    <string name="item20_desc">Named after the way it tickles your taste buds, this Parma violet vodka cocktail is a sophisticated little number</string>
+
+    <string name="item19_name">Cuba libre</string>
+    <string name="item19_desc">The national drink of Cuba celebrating its independence. There\'s more to it than just cola, rum and lime; it\'s the way you make it</string>
 
 
 </resources>
