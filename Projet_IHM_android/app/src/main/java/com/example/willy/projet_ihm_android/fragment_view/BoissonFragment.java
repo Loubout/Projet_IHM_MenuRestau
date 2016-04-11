@@ -17,23 +17,25 @@ import com.origamilabs.library.views.StaggeredGridView;
 public class BoissonFragment extends PaneFragment {
     MainActivity act ;
 
-    StaggeredGridView boissonView;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.two_column_tiles, container, false);
-        boissonView = (StaggeredGridView) view.findViewById(R.id.gridview);
-        boissonView.setAdapter(ImageAdapter.getDrinksImageAdapter(getActivity()));
+        gridView = (StaggeredGridView) view.findViewById(R.id.gridview);
+        gridView.setAdapter(ImageAdapter.getDrinksImageAdapter(getActivity()));
 
-        boissonView.setOnItemClickListener(new StaggeredGridView.OnItemClickListener() {
+
+
+
+        gridView.setOnItemClickListener(new StaggeredGridView.OnItemClickListener() {
             public void onItemClick(StaggeredGridView parent, View v,
                                     int position, long id) {
                 Toast.makeText(getActivity(), "" + position,
                         Toast.LENGTH_SHORT).show();
 
                 act = (MainActivity) getActivity();
-                act.afficheDesc("test","testDescBoisson","10€",null);
+                act.afficheDesc("test", "testDescBoisson", "10€", null);
             }
         });
-        return boissonView;
+        return gridView;
     }
 }

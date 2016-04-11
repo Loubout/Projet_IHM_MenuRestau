@@ -5,22 +5,8 @@
     android:layout_width="match_parent">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/menuItem"
-        android:padding="6px"
-        android:paddingBottom="12px"
-        android:paddingTop="12px"
-        android:background="@drawable/left_panel_item"
-
-        android:textColor="#000000"
-        android:minWidth="@dimen/activity_horizontal_margin"
-        android:minHeight="60dp"
-        android:gravity="center"
-        android:lines="1"
-        android:textSize="18sp"
-        android:scrollHorizontally="false"
+       android:id="@+id/menuItem"
+       style="@style/categoryButtonStyle"
         />
         <!--android:background="@drawable/item_selector" !-->
 
