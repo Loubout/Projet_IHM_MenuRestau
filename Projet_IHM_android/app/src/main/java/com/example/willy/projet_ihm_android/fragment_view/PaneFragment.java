@@ -11,6 +11,11 @@ public class PaneFragment extends Fragment {
 
     ViewSelector viewSelector = ViewSelector.CARROUSSEL;
 
+    public void DoubleTap(){
+
+    }
+
+
     public void updateTextField(String data){
     /*
         if(data.equals("Apéritif")){
