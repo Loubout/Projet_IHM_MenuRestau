@@ -31,7 +31,7 @@ public class LeftPaneFragment extends ListFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        final String[] items = getResources().getStringArray(R.array.menuItems);
+        final String[] items = getResources().getStringArray(R.array.menuitems);
         final ArrayAdapter<String> aa = new ArrayAdapter<String>(getActivity(),
                 R.layout.menu_item_layout, R.id.menuItem, items);
 

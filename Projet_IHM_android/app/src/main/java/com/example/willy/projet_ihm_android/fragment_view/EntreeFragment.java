@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.willy.projet_ihm_android.MainActivity;
 import com.example.willy.projet_ihm_android.R;
 import com.example.willy.projet_ihm_android.two_column_tiles.ImageAdapter;
 import com.origamilabs.library.views.StaggeredGridView;
@@ -14,6 +15,7 @@ import com.origamilabs.library.views.StaggeredGridView;
  * Created by Tomohiro on 09/04/16.
  */
 public class EntreeFragment extends PaneFragment {
+    MainActivity act ;
 
     StaggeredGridView entreeView;
 
@@ -28,6 +30,8 @@ public class EntreeFragment extends PaneFragment {
                                    int position, long id) {
                Toast.makeText(getActivity(), "" + position,
                        Toast.LENGTH_SHORT).show();
+               act = (MainActivity) getActivity();
+               act.afficheDesc("test", "testDescBoisson", "10€",null);
            }
        });
         return entreeView;
