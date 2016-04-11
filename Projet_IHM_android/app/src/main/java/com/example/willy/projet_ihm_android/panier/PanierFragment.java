@@ -1,8 +1,10 @@
 package com.example.willy.projet_ihm_android.panier;
 
 
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -119,6 +121,73 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
         adapter = new MyAdapter(data);
         mListView.setAdapter(adapter);
         mListView.setOnItemClickListener(this);
+
+
+        //On gere les bouttons de panier ici
+
+        Button bvalider = (Button) view.findViewById(R.id.buttonValiderCommande);
+        bvalider.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity().findViewById(android.R.id.content).getContext());
+                builder.setMessage("Valider votre commande?")
+                        .setCancelable(false)
+                        .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                /*
+                                *
+                                *
+                                * ICI ENVOIE DES DONNEES DATA VERS SERVEUR
+                                *
+                                * */
+                                data.clear();
+                                total=0;
+                                tot.setText("0");
+                                adapter = new MyAdapter(data);
+                                mListView.setAdapter(adapter);
+
+                                System.out.println("===================HELLO=====");
+
+                            }
+                        })
+                        .setNegativeButton("Non", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alert = builder.create();
+                alert.show();
+            }
+        });
+
+
+        Button bretour = (Button) view.findViewById(R.id.retourMenu);
+        bretour.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                data.clear();
+                //on intent et envoie monpanier a lactivite precedente
+                //on quitte lactivity
+                //on reviens sur lactivite precedente!!
+
+
+
+            }
+        });
+
+        Button bserveur = (Button) view.findViewById(R.id.boutonServeur);
+        bretour.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //On gere le bouton ici
+                notify();
+            }
+        });
+
+        System.out.println("TOTAL NOW" + total);
+        tot = (TextView) view.findViewById(R.id.totalprix);
+        tot.setText(((Integer) total).toString());
+        getActivity().findViewById(android.R.id.content).invalidate();
+
+
 
         return view;
     }
