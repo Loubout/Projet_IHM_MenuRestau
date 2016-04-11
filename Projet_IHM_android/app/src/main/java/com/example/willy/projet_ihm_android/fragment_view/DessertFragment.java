@@ -17,7 +17,7 @@ import com.origamilabs.library.views.StaggeredGridView;
  */
 public class DessertFragment extends PaneFragment {
 
-    StaggeredGridView dessertView;
+    StaggeredGridView gridView;
     MainActivity act ;
     int cpt=0;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -30,10 +30,10 @@ public class DessertFragment extends PaneFragment {
     public View getDessertView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         View view = inflater.inflate(R.layout.two_column_tiles, container, false);
-        dessertView = (StaggeredGridView) view.findViewById(R.id.gridview);
-        dessertView.setAdapter(ImageAdapter.getDessertsImageAdapter(getActivity()));
+        gridView = (StaggeredGridView) view.findViewById(R.id.gridview);
+        gridView.setAdapter(ImageAdapter.getDessertsImageAdapter(getActivity()));
 
-        dessertView.setOnItemClickListener(new StaggeredGridView.OnItemClickListener() {
+        gridView.setOnItemClickListener(new StaggeredGridView.OnItemClickListener() {
             public void onItemClick(StaggeredGridView parento, View vo,
                                     int positiono, long id) {
                 //Toast.makeText(getActivity(), "" + position,
@@ -129,6 +129,6 @@ public class DessertFragment extends PaneFragment {
 */
             }
         });
-        return dessertView;
+        return gridView;
     }
 }

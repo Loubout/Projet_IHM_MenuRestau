@@ -17,8 +17,7 @@ import com.origamilabs.library.views.StaggeredGridView;
  * Created by Tomohiro on 09/04/16.
  */
 public class AperitifFragment extends PaneFragment {
-    MainActivity act ;
-    StaggeredGridView aperitifView;
+    MainActivity act;
 
     int cpt=0;
 
@@ -26,16 +25,16 @@ public class AperitifFragment extends PaneFragment {
 
         System.out.println("Aperitif View");
         View view = inflater.inflate(R.layout.two_column_tiles, container, false);
-        aperitifView = (StaggeredGridView) view.findViewById(R.id.gridview);
-        aperitifView.setAdapter(ImageAdapter.getAperitifImageAdapter(getActivity()));
-        aperitifView.setOnItemClickListener(new StaggeredGridView.OnItemClickListener() {
+        gridView = (StaggeredGridView) view.findViewById(R.id.gridview);
+        gridView.setAdapter(ImageAdapter.getAperitifImageAdapter(getActivity()));
+        gridView.setOnItemClickListener(new StaggeredGridView.OnItemClickListener() {
 
             public void onItemClick(StaggeredGridView parento, View vo,
                                     int positiono, long id) {
                 // Toast.makeText(getActivity(), "" + position,
                 //         Toast.LENGTH_SHORT).show();
 
-                final StaggeredGridView parent=parento;
+                final StaggeredGridView parent = parento;
                 final View v = vo;
                 final int position = positiono;
                 cpt++;
@@ -107,16 +106,10 @@ public class AperitifFragment extends PaneFragment {
                 };
 
 
-
-
-
-
-
-                if (cpt == 1){
+                if (cpt == 1) {
 
                     handler.postDelayed(r, 300);
-                }
-                else if (cpt == 2) {
+                } else if (cpt == 2) {
                     //Double click
                     cpt = 0;
                     System.out.println("/////////////////////////////DOUBLE CLICK/////////");
@@ -128,11 +121,12 @@ public class AperitifFragment extends PaneFragment {
 /*
                     // ça c'est l'id de l'item tu peux le modifier dans les constructeurs de ImageAdapter
 
-*/      }
+*/
+            }
 
         });
         System.out.println("endActivity");
-        return aperitifView;
+        return gridView;
     }
 
 

@@ -18,13 +18,12 @@ import com.origamilabs.library.views.StaggeredGridView;
 public class PlatFragment extends PaneFragment {
     MainActivity act ;
     int cpt=0;
-    StaggeredGridView platView;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.two_column_tiles, container, false);
-        platView = (StaggeredGridView) view.findViewById(R.id.gridview);
-        platView.setAdapter(ImageAdapter.getDishesImageAdapter(getActivity()));
-        platView.setOnItemClickListener(new StaggeredGridView.OnItemClickListener() {
+        gridView = (StaggeredGridView) view.findViewById(R.id.gridview);
+        gridView.setAdapter(ImageAdapter.getDishesImageAdapter(getActivity()));
+        gridView.setOnItemClickListener(new StaggeredGridView.OnItemClickListener() {
             public void onItemClick(StaggeredGridView parento, View vo,
                                     int positiono, long id) {
                 //  Toast.makeText(getActivity(), "" + position,
@@ -144,7 +143,7 @@ public class PlatFragment extends PaneFragment {
 
             }
         });
-        return platView;
+        return gridView;
     }
 
 }

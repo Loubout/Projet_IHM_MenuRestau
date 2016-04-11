@@ -18,15 +18,14 @@ import com.origamilabs.library.views.StaggeredGridView;
 public class EntreeFragment extends PaneFragment {
     MainActivity act ;
 
-    StaggeredGridView entreeView;
     int cpt=0;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.two_column_tiles, container, false);
-        entreeView = (StaggeredGridView) view.findViewById(R.id.gridview);
-        entreeView.setAdapter(ImageAdapter.getEntreeImageAdapter(getActivity()));
+        gridView = (StaggeredGridView) view.findViewById(R.id.gridview);
+        gridView.setAdapter(ImageAdapter.getEntreeImageAdapter(getActivity()));
 
 
-        entreeView.setOnItemClickListener(new StaggeredGridView.OnItemClickListener() {
+        gridView.setOnItemClickListener(new StaggeredGridView.OnItemClickListener() {
             public void onItemClick(StaggeredGridView parento, View vo,
                                     int positiono, long id) {
                 // Toast.makeText(getActivity(), "" + position,
@@ -151,9 +150,13 @@ public class EntreeFragment extends PaneFragment {
 
                             act = (MainActivity) getActivity();
                             act.afficheDesc(n, d, p, i);
+
+                            // On va ajouter l'item dans le panier
+                            panier
                         }
                     }
                 };
+
 
                 if (cpt == 1) {
                     handler.postDelayed(r, 300);
@@ -165,14 +168,13 @@ public class EntreeFragment extends PaneFragment {
 
 
 
-
 /*
                     // ça c'est l'id de l'item tu peux le modifier dans les constructeurs de ImageAdapter
 
 */
             }
         });
-        return entreeView;
+        return gridView;
     }
 
 }

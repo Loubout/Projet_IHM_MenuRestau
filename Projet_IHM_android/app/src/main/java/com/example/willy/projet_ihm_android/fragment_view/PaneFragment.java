@@ -3,6 +3,7 @@ package com.example.willy.projet_ihm_android.fragment_view;
 import android.app.Fragment;
 
 import com.example.willy.projet_ihm_android.fragment_view.fragment_data.ViewSelector;
+import com.origamilabs.library.views.StaggeredGridView;
 
 /**
  * Created by Tomohiro on 09/04/16.
@@ -10,6 +11,9 @@ import com.example.willy.projet_ihm_android.fragment_view.fragment_data.ViewSele
 public class PaneFragment extends Fragment {
 
     ViewSelector viewSelector = ViewSelector.CARROUSSEL;
+
+
+    StaggeredGridView gridView;
 
     public void DoubleTap(){
 
