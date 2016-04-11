@@ -84,7 +84,7 @@ public class MainActivity extends Activity implements LeftPaneFragment.OnArticle
         return this.currentMainFragment;
     }
 
-    public void afficheDesc(String n, String d, String p,Drawable i){
+    public void afficheDesc(String n, String d, String p, Drawable i){
         manager = getFragmentManager();
         transaction = manager.beginTransaction();
         transaction.replace(  currentMainFragment.getId(), new DescriptionFoodFragment(n,d,p,i));
