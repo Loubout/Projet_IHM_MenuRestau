@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -144,6 +145,7 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
                                 tot.setText("0");
                                 adapter = new MyAdapter(data);
                                 mListView.setAdapter(adapter);
+                                monpanier.clear();
 
                                 System.out.println("===================HELLO=====");
 
@@ -160,27 +162,41 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
         });
 
 
-        Button bretour = (Button) view.findViewById(R.id.retourMenu);
-        bretour.setOnClickListener(new View.OnClickListener() {
+        Button bclear = (Button) view.findViewById(R.id.clean);
+        bclear.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity().findViewById(android.R.id.content).getContext());
+                builder.setMessage("Etesvous sure de supprimer toutes les commandes?")
+                        .setCancelable(false)
+                        .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                /*
+                                *
+                                *
+                                * ICI ENVOIE DES DONNEES DATA VERS SERVEUR
+                                *
+                                * */
+                                data.clear();
+                                total=0;
+                                tot.setText("0");
+                                adapter = new MyAdapter(data);
+                                mListView.setAdapter(adapter);
+                                monpanier.clear();
 
-                data.clear();
-                //on intent et envoie monpanier a lactivite precedente
-                //on quitte lactivity
-                //on reviens sur lactivite precedente!!
+                                System.out.println("===================HELLO=====");
 
-
-
+                            }
+                        })
+                        .setNegativeButton("Non", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alert = builder.create();
+                alert.show();
             }
         });
 
-        Button bserveur = (Button) view.findViewById(R.id.boutonServeur);
-        bretour.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //On gere le bouton ici
-                notify();
-            }
-        });
 
         System.out.println("TOTAL NOW" + total);
         tot = (TextView) view.findViewById(R.id.totalprix);
@@ -244,7 +260,7 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
                 final Integer pr = data.get(position).getprix();
 
 
-                Button button = (Button) v.findViewById(R.id.retirer);
+                ImageButton button = (ImageButton) v.findViewById(R.id.retirer);
                 button.setTag(position);
                 button.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
@@ -327,6 +343,36 @@ public class PanierFragment extends Fragment implements AdapterView.OnItemClickL
 
                         }
 
+                    }
+
+                });
+
+                ImageButton buttonadd = (ImageButton) v.findViewById(R.id.addItem);
+                buttonadd.setTag(position);
+                buttonadd.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+
+                        //action de rajouter
+/*
+                                    for(int i=0;i<data.size();i++){
+                                        System.out.println("//////////////////////////");
+                                        System.out.println("//Affichage de data :"+i);
+                                        System.out.println("//Nom de l'elem :"+data.get(i).getNomElem());
+                                        System.out.println("//prix :"+data.get(i).prix);
+                                        System.out.println("//nombre :"+data.get(i).getQuantites());
+                                        System.out.println("//Fin affichage");
+                                        System.out.println("//////////////////////////////");
+
+                                    }*/
+
+                        int nb = data.get(position).getQuantites() + 1;
+                        int pr =(data.get(position).getprix()/(nb-1))*nb;
+                        ElemPanier nelt = new ElemPanier(data.get(position).getNomElem(), nb, pr);
+                        data.put(position,nelt);
+                        total = total +(data.get(position).getprix()/nb);
+                        tot.setText(((Integer) total).toString());
+                        System.out.println("ADD " + position);
+                        notifyDataSetChanged();
                     }
 
                 });
