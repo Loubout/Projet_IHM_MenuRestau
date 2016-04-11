@@ -1,20 +1,66 @@
 package com.example.willy.projet_ihm_android.fragment_view;
 
 import android.app.Fragment;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.content.ContextCompat;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.example.willy.projet_ihm_android.MainActivity;
 import com.example.willy.projet_ihm_android.fragment_view.fragment_data.ViewSelector;
+import com.example.willy.projet_ihm_android.two_column_tiles.ImageAdapter;
 import com.origamilabs.library.views.StaggeredGridView;
 
 /**
  * Created by Tomohiro on 09/04/16.
  */
 public class PaneFragment extends Fragment {
+    MainActivity act ;
+    private int cpt=0;
+    protected StaggeredGridView gridView;
 
-    ViewSelector viewSelector = ViewSelector.CARROUSSEL;
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        gridView.setOnItemClickListener(new StaggeredGridView.OnItemClickListener() {
+            public void onItemClick(StaggeredGridView parento, View vo, int positiono, long id) {
 
+                final StaggeredGridView parent = parento;
+                final int position = positiono;
+                cpt++;
+                Handler handler = new Handler();
+                Runnable r = new Runnable() {
 
-    StaggeredGridView gridView;
+                    @Override
+                    public void run() {
+                        if (cpt == 1) {
+                            cpt = 0;
+                            ImageAdapter.Item item = ((ImageAdapter.Item) (parent.getAdapter().getItem(position)));
+                            Drawable i = ContextCompat.getDrawable(getActivity().getApplicationContext(), item.drawableId);
+                            String n = getActivity().getString(item.nameId);
+                            String d = getActivity().getString(item.descId);
+                            String p = getActivity().getString(item.priceId);
 
+                            act = (MainActivity) getActivity();
+                            act.afficheDesc(n, d, p, i);
+                        }
+                    }
+                };
+
+                if (cpt == 1) { //Simple clic
+                    handler.postDelayed(r, 300);
+                } else if (cpt == 2) { //Double clic
+                    cpt = 0;
+                }
+            }
+        });
+        return gridView;
+    }
     public void DoubleTap(){
 
     }
