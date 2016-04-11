@@ -32,8 +32,8 @@ public final class ImageAdapter extends BaseAdapter {
     public static ImageAdapter getMenuImageAdapter (Context context) {
         ImageAdapter imgAdapt = new ImageAdapter(context);
         imgAdapt.mItems.add(new Item("itemMenu1", R.drawable.food_menu1, R.string.food_menu1_name, R.string.food_menu1_price, R.string.food_menu1_desc));
-        imgAdapt.mItems.add(new Item("itemMenu2", R.drawable.food_menu1, R.string.food_menu1_name, R.string.food_menu1_price, R.string.food_menu1_desc));
-        imgAdapt.mItems.add(new Item("itemMenu3", R.drawable.food_menu1, R.string.food_menu1_name, R.string.food_menu1_price, R.string.food_menu1_desc));
+        imgAdapt.mItems.add(new Item("itemMenu2", R.drawable.food_menu2, R.string.food_menu2_name, R.string.food_menu2_price, R.string.food_menu2_desc));
+        imgAdapt.mItems.add(new Item("itemMenu3", R.drawable.food_menu3, R.string.food_menu3_name, R.string.food_menu3_price, R.string.food_menu3_desc));
         return imgAdapt;
     }
 

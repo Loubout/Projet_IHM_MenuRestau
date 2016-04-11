@@ -143,8 +143,15 @@ Ebi cream korokke</string>
 
 
     <string name="food_menu1_name">Menu Découverte</string>
-    <string name="food_menu1_desc">Menu Découverte : assortiment de Takoyakis, accompagné poulets frits Karaage et de raviolis Gyozas.</string>
-    <string name="food_menu1_price">15e</string>
+    <string name="food_menu1_desc">Menu Découverte : assortiment de Takoyakis, accompagné de poulets frits Karaage et de raviolis Gyozas.</string>
+    <string name="food_menu1_price">13e</string>
 
+    <string name="food_menu2_name">Menu Tako-Gyozas</string>
+    <string name="food_menu2_desc">Menu Tako-Gyozas : 6 boulettes de Takoyakis, accompagné de 6 raviolis Gyozas.</string>
+    <string name="food_menu2_price">13e</string>
+
+    <string name="food_menu3_name">Menu Bentô</string>
+    <string name="food_menu3_desc">Menu Bentô : menu repas sur place ou à emporter.</string>
+    <string name="food_menu3_price">14e</string>
 
 </resources>
