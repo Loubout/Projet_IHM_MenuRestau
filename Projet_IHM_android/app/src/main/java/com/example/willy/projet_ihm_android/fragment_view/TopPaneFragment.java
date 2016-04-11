@@ -30,7 +30,7 @@ public class TopPaneFragment extends Fragment implements AdapterView.OnClickList
         logo = (ImageView) view.findViewById(R.id.logoPanel);
         logo.setOnClickListener(this);
 
-        panier = (TextView) view.findViewById(R.id.panier);
+        panier = (TextView) view.findViewById(R.id.panier_layout);
         panier.setOnClickListener(this);
 
         return view;
@@ -38,7 +38,7 @@ public class TopPaneFragment extends Fragment implements AdapterView.OnClickList
 
     @Override
     public void onClick(View view) {
-        if(view.getId() == getActivity().findViewById(R.id.panier).getId()){
+        if(view.getId() == getActivity().findViewById(R.id.panier_layout).getId()){
             FragmentManager fragmentManager = getActivity().getFragmentManager();
             FragmentTransaction transaction = fragmentManager.beginTransaction();
             transaction.replace(R.id.mainPanel, new PanierFragment());

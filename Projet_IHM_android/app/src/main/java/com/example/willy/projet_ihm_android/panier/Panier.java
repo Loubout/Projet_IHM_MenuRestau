@@ -84,7 +84,7 @@ public class Panier extends AppCompatActivity implements AdapterView.OnItemClick
         //prix total de la commande
         total = 0;
 
-        mListView = (ListView) findViewById(R.id.listView1);
+        mListView = (ListView) findViewById(R.id.commandeList);
 
 
         if (!monpanier.isEmpty()) {

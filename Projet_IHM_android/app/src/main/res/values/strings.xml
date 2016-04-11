@@ -38,7 +38,7 @@ Veloute edamame</string>
 </string>
 <string name="item14_name">
 Donburi shake miso</string>
-<string name="item14_desc">bol de riz garni de filet de boeuf emince,jaune d'oeuf et legumes
+<string name="item14_desc">bol de riz garni de filet de boeuf emince,jaune d\'oeuf et legumes
 </string>
 <string name="item15_name">
 Okonomiyaki</string>
@@ -46,11 +46,11 @@ Okonomiyaki</string>
 </string>
 <string name="item16_name">
 Takoyaki</string>
-<string name="item16_desc">bouchees chaudes, cuites a l'exterieur et fondantes a l'interieur garniture:poulpe sauces:classique
+<string name="item16_desc">bouchees chaudes, cuites a l\'exterieur et fondantes a l\'interieur garniture:poulpe sauces:classique
 </string>
 <string name="item17_name">
 Takoyaki spicy</string>
-<string name="item17_desc">bouchees chaudes, cuites a l'exterieur et fondantes a l'interieur garniture:poulpe sauces:spicy
+<string name="item17_desc">bouchees chaudes, cuites a l\'exterieur et fondantes a l\'interieur garniture:poulpe sauces:spicy
 </string>
 <string name="item18_name">
 Yakisoba</string>
@@ -66,7 +66,7 @@ Edamame</string>
 </string>
 <string name="item3_name">
 Ohitashi</string>
-<string name="item3_desc">salade d'epinards frais,sauce sesame
+<string name="item3_desc">salade d\'epinards frais,sauce sesame
 </string>
 <string name="item4_name">
 Creme brulee</string>
