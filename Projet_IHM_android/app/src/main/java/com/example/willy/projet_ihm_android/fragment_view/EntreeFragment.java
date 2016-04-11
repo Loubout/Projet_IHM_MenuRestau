@@ -142,4 +142,5 @@ public class EntreeFragment extends PaneFragment {
        });
         return entreeView;
     }
+
 }
