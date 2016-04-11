@@ -9,6 +9,8 @@
         <item name="android:textColorPrimary">@color/primary_text_material_light</item>
         <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:buttonStyle">@style/buttonStyle</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
 
     </style>
 
