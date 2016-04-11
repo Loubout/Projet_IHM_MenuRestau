@@ -152,7 +152,7 @@ public class EntreeFragment extends PaneFragment {
                             act.afficheDesc(n, d, p, i);
 
                             // On va ajouter l'item dans le panier
-                            panier
+                          
                         }
                     }
                 };
