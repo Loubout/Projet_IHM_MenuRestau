@@ -24,6 +24,9 @@ public class BoissonFragment extends PaneFragment {
         boissonView = (StaggeredGridView) view.findViewById(R.id.gridview);
         boissonView.setAdapter(ImageAdapter.getDrinksImageAdapter(getActivity()));
 
+
+
+
         boissonView.setOnItemClickListener(new StaggeredGridView.OnItemClickListener() {
             public void onItemClick(StaggeredGridView parent, View v,
                                     int position, long id) {
