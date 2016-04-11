@@ -1,6 +1,4 @@
-package com.example.willy.projet_ihm_android;
-
-import java.util.ArrayList;
+package com.example.willy.projet_ihm_android.panier;
 
 /**
  * Created by Masa on 2016/03/29.

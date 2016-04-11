@@ -3,6 +3,7 @@ package com.example.willy.projet_ihm_android;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -83,10 +84,10 @@ public class MainActivity extends Activity implements LeftPaneFragment.OnArticle
         return this.currentMainFragment;
     }
 
-    public void afficheDesc(String n, String d, String p){
+    public void afficheDesc(String n, String d, String p, Drawable i){
         manager = getFragmentManager();
         transaction = manager.beginTransaction();
-        transaction.replace(  currentMainFragment.getId(), new DescriptionFoodFragment(n,d,p));
+        transaction.replace(  currentMainFragment.getId(), new DescriptionFoodFragment(n,d,p,i));
         transaction.addToBackStack(null);
         transaction.commit();
     }

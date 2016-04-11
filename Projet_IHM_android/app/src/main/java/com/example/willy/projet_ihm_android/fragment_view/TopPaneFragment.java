@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.willy.projet_ihm_android.R;
+import com.example.willy.projet_ihm_android.panier.PanierFragment;
 
 /**
  * Created by Tomohiro on 07/04/16.
@@ -37,15 +38,23 @@ public class TopPaneFragment extends Fragment implements AdapterView.OnClickList
 
     @Override
     public void onClick(View view) {
-        //Ici, la position récupérée est celle fournie par la méthode getItem de notre classe MyAdapter
+        if(view.getId() == getActivity().findViewById(R.id.panier).getId()){
+            FragmentManager fragmentManager = getActivity().getFragmentManager();
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            transaction.replace(R.id.mainPanel, new PanierFragment());
+            transaction.addToBackStack(null);
+            transaction.commit();
+            Toast.makeText(getActivity(), "PanierClick ", Toast.LENGTH_SHORT).show();
+        }
+        else if(view.getId() == getActivity().findViewById(R.id.logoPanel).getId()) {
+            FragmentManager fragmentManager = getActivity().getFragmentManager();
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            transaction.replace(R.id.mainPanel, new CarrousselFragment());
+            transaction.addToBackStack(null);
+            transaction.commit();
 
-        FragmentManager fragmentManager = getActivity().getFragmentManager();
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.mainPanel, new CarrousselFragment());
-        transaction.addToBackStack(null);
-        transaction.commit();
-
-        Toast.makeText(getActivity(), "TopPaneClick ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "LogoClick ", Toast.LENGTH_SHORT).show();
+        }
     }
 
 
