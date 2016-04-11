@@ -1,12 +1,10 @@
 package com.example.willy.projet_ihm_android.two_column_tiles;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,9 +30,9 @@ public final class ImageAdapter extends BaseAdapter {
     // mais en fait non fuck it
     public static ImageAdapter getAperitifImageAdapter (Context context){
         ImageAdapter imgAdapt = new ImageAdapter(context);
-        imgAdapt.mItems.add(new Item("dessert1", R.drawable.food_accompagnement_item1));
-        imgAdapt.mItems.add(new Item("dessert2", R.drawable.food_accompagnement_item2));
-        imgAdapt.mItems.add(new Item("dessert3", R.drawable.food_accompagnement_item3));
+        imgAdapt.mItems.add(new Item("item1", R.drawable.food_accompagnement_item1));
+        imgAdapt.mItems.add(new Item("item2", R.drawable.food_accompagnement_item2));
+        imgAdapt.mItems.add(new Item("item3", R.drawable.food_accompagnement_item3));
         return imgAdapt;
     }
 
@@ -42,31 +40,31 @@ public final class ImageAdapter extends BaseAdapter {
 
     public static ImageAdapter getDessertsImageAdapter (Context context){
         ImageAdapter imgAdapt = new ImageAdapter(context);
-        imgAdapt.mItems.add(new Item("dessert1", R.drawable.food_dessert_item4));
-        imgAdapt.mItems.add(new Item("dessert2", R.drawable.food_dessert_item6));
-        imgAdapt.mItems.add(new Item("dessert3", R.drawable.food_dessert_item5));
+        imgAdapt.mItems.add(new Item("item4", R.drawable.food_dessert_item4));
+        imgAdapt.mItems.add(new Item("item6", R.drawable.food_dessert_item6));
+        imgAdapt.mItems.add(new Item("item5", R.drawable.food_dessert_item5));
         return imgAdapt;
     }
 
     public static ImageAdapter getDishesImageAdapter (Context context){
         ImageAdapter imgAdapt = new ImageAdapter(context);
-        imgAdapt.mItems.add(new Item("plat1", R.drawable.food_plat_item14));
-        imgAdapt.mItems.add(new Item("plat2", R.drawable.food_plat_item15));
-        imgAdapt.mItems.add(new Item("plat3", R.drawable.food_plat_item16));
-        imgAdapt.mItems.add(new Item("plat4", R.drawable.food_plat_item17));
-        imgAdapt.mItems.add(new Item("plat5", R.drawable.food_plat_item18));
+        imgAdapt.mItems.add(new Item("item14", R.drawable.food_plat_item14));
+        imgAdapt.mItems.add(new Item("item15", R.drawable.food_plat_item15));
+        imgAdapt.mItems.add(new Item("item16", R.drawable.food_plat_item16));
+        imgAdapt.mItems.add(new Item("item17", R.drawable.food_plat_item17));
+        imgAdapt.mItems.add(new Item("item18", R.drawable.food_plat_item18));
         return imgAdapt;
     }
 
     public static ImageAdapter getEntreeImageAdapter(Context context){
         ImageAdapter imgAdapt = new ImageAdapter(context);
-        imgAdapt.mItems.add(new Item("entree1", R.drawable.food_entree_item7));
-        imgAdapt.mItems.add(new Item("entree2", R.drawable.food_entree_item8));
-        imgAdapt.mItems.add(new Item("entree3", R.drawable.food_entree_item9));
-        imgAdapt.mItems.add(new Item("entree4", R.drawable.food_entree_item10));
-        imgAdapt.mItems.add(new Item("entree5", R.drawable.food_entree_item11));
-        imgAdapt.mItems.add(new Item("entree6", R.drawable.food_entree_item12));
-        imgAdapt.mItems.add(new Item("entree7", R.drawable.food_entree_item13));
+        imgAdapt.mItems.add(new Item("item7", R.drawable.food_entree_item7));
+        imgAdapt.mItems.add(new Item("item8", R.drawable.food_entree_item8));
+        imgAdapt.mItems.add(new Item("item9", R.drawable.food_entree_item9));
+        imgAdapt.mItems.add(new Item("item10", R.drawable.food_entree_item10));
+        imgAdapt.mItems.add(new Item("item11", R.drawable.food_entree_item11));
+        imgAdapt.mItems.add(new Item("item12", R.drawable.food_entree_item12));
+        imgAdapt.mItems.add(new Item("item13", R.drawable.food_entree_item13));
         return imgAdapt;
     }
 
