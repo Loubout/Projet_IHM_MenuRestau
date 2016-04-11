@@ -1,11 +1,9 @@
 package com.example.willy.projet_ihm_android.fragment_view;
 
-//<<<<<<< HEAD
 /**
  * Created by Willy on 10/04/2016.
  */
 
-//=======
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -31,13 +29,14 @@ public class DescriptionFoodFragment extends PaneFragment {
     private String desc;
     private String prix;
     private Drawable img;
+
+
     public DescriptionFoodFragment(String n, String d, String p, Drawable i) {
         name = n;
         desc = d;
         prix = p;
         img=i;
     }
-
 
 
     @Override
@@ -64,5 +63,4 @@ public class DescriptionFoodFragment extends PaneFragment {
     }
 
 
-//>>>>>>> ed65a6b... test
 }

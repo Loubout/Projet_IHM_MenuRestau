@@ -15,15 +15,11 @@
     tools:showIn="@layout/activity_main">
 
 
-
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Choisir le numero de la table"
-
-
         />
 
 
