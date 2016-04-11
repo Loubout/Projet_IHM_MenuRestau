@@ -4,10 +4,12 @@
     >
 
     <!-- "Mark Favorite", should appear as action button if possible -->
+
+
     <item
         android:id="@+id/action_panier"
         android:icon="@drawable/panier_icon"
         android:title="@string/panier"
-        app:showAsAction="withText"/>
+        app:showAsAction="always"/>
 
 </menu>
