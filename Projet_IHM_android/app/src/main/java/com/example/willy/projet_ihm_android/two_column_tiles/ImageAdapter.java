@@ -28,6 +28,15 @@ public final class ImageAdapter extends BaseAdapter {
 
     // c'est là qu'on se dit qu'on pourrait une factory ...
     // mais en fait non fuck it
+
+    public static ImageAdapter getMenuImageAdapter (Context context) {
+        ImageAdapter imgAdapt = new ImageAdapter(context);
+        imgAdapt.mItems.add(new Item("itemMenu1", R.drawable.food_menu1, R.string.food_menu1_name, R.string.food_menu1_price, R.string.food_menu1_desc));
+        imgAdapt.mItems.add(new Item("itemMenu2", R.drawable.food_menu1, R.string.food_menu1_name, R.string.food_menu1_price, R.string.food_menu1_desc));
+        imgAdapt.mItems.add(new Item("itemMenu3", R.drawable.food_menu1, R.string.food_menu1_name, R.string.food_menu1_price, R.string.food_menu1_desc));
+        return imgAdapt;
+    }
+
     public static ImageAdapter getAperitifImageAdapter (Context context){
         ImageAdapter imgAdapt = new ImageAdapter(context);
         imgAdapt.mItems.add(new Item("item1", R.drawable.food_accompagnement_item1, R.string.item1_name, R.string.item1_price, R.string.item1_desc));
