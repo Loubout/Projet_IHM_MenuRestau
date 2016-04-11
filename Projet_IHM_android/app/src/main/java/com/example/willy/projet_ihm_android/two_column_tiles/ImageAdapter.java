@@ -122,7 +122,7 @@ public final class ImageAdapter extends BaseAdapter {
         return v;
     }
 
-    private static class Item {
+    public static class Item {
         public final String name;
         public final int drawableId;
 
