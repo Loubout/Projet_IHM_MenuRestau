@@ -30,11 +30,17 @@ public class AperitifFragment extends PaneFragment {
                                     int position, long id) {
                 Toast.makeText(getActivity(), "" + position,
                         Toast.LENGTH_SHORT).show();
+
+
+                // ça c'est l'id de l'item tu peux le modifier dans les constructeurs de ImageAdapter
+                String itemId = ((ImageAdapter.Item)(parent.getAdapter().getItem(position))).name;
+
+
                 act = (MainActivity) getActivity();
                 act.afficheDesc("test", "testDescBoisson", "10€",null);
                 String data = aperitifView.toString();
 
-                System.out.println("/////////////////////////////"+data);
+                System.out.println("/////////////////////////////" + data);
 
             }
         });
