@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements LeftPaneFragment.
         setContentView(R.layout.activity_main);
         Log.d("", "MainActivity started");
 
-
         panier = new ArrayList<ElemPanier>();
 
         LeftPaneFragment leftMenuFragment = new LeftPaneFragment();
@@ -91,7 +90,6 @@ public class MainActivity extends AppCompatActivity implements LeftPaneFragment.
 
         transaction.add(R.id.leftSidePanel, leftMenuFragment, "leftMenuFragment");
         transaction.add(R.id.mainPanel, carrousselFragment, "mainFragment");
-
 
     }
 
@@ -193,5 +191,4 @@ public class MainActivity extends AppCompatActivity implements LeftPaneFragment.
 
         }
     }
-
 }
