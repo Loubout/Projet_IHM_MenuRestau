@@ -58,7 +58,7 @@ public class CarrousselFragment extends PaneFragment {
                             act.afficheDesc(getActivity().getResources().getString(R.string.item1_name),
                                     getActivity().getResources().getString(R.string.item1_desc),
                                     getActivity().getResources().getString(R.string.item1_price),
-                                    getActivity().getResources().getDrawable(R.drawable.food_dessert_item4)
+                                    getActivity().getResources().getDrawable(R.drawable.food_accompagnement_item1)
                                     );
                             break;
                         case 1:

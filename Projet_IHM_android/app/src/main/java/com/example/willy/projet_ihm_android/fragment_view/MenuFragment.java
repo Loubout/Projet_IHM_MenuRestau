@@ -15,7 +15,7 @@ import com.origamilabs.library.views.StaggeredGridView;
  */
 public class MenuFragment extends PaneFragment {
 
-    MainActivity act ;
+    MainActivity act;
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
