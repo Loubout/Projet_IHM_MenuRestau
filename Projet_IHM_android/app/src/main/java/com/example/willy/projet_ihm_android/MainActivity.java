@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements LeftPaneFragment.
     FragmentTransaction transaction;
 
     PaneFragment currentMainFragment;
+    String lastPick;
+    String currentPick;
 
     public ArrayList<ElemPanier> panier;
 
@@ -130,7 +132,8 @@ public class MainActivity extends AppCompatActivity implements LeftPaneFragment.
         System.out.println("onArticleSelected");
 
         transaction = manager.beginTransaction();
-
+        lastPick = data;
+        currentPick=data;
         if(data.equals("Apéritif")){
             currentMainFragment = new AperitifFragment();
             transaction.replace(R.id.mainPanel, currentMainFragment);
@@ -172,4 +175,20 @@ public class MainActivity extends AppCompatActivity implements LeftPaneFragment.
         transaction.commit();
     }
 
+    @Override
+    public void onBackPressed() {
+        if (getFragmentManager().getBackStackEntryCount() == 0) {
+            this.finish();
+        } else {
+
+
+            getFragmentManager().popBackStack();
+
+            if (!currentPick.equals(lastPick)){
+                
+            }
+
+
+        }
+    }
 }
