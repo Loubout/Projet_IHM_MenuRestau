@@ -5,14 +5,12 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.willy.projet_ihm_android.MainActivity;
-import com.example.willy.projet_ihm_android.fragment_view.fragment_data.ViewSelector;
+import com.example.willy.projet_ihm_android.panier.ElemPanier;
 import com.example.willy.projet_ihm_android.two_column_tiles.ImageAdapter;
 import com.origamilabs.library.views.StaggeredGridView;
 
@@ -20,18 +18,21 @@ import com.origamilabs.library.views.StaggeredGridView;
  * Created by Tomohiro on 09/04/16.
  */
 public class PaneFragment extends Fragment {
+
     MainActivity act ;
+
     private int cpt=0;
+    private int tapPosition=-1;
+
     protected StaggeredGridView gridView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
         gridView.setOnItemClickListener(new StaggeredGridView.OnItemClickListener() {
-            public void onItemClick(StaggeredGridView parento, View vo, int positiono, long id) {
-
-                final StaggeredGridView parent = parento;
-                final int position = positiono;
+            public void onItemClick(StaggeredGridView parentOrigin, View viewOrigin, int positionOrigin, long id) {
+                final StaggeredGridView parent = parentOrigin;
+                final int position = positionOrigin;
                 cpt++;
                 Handler handler = new Handler();
                 Runnable r = new Runnable() {
@@ -53,16 +54,38 @@ public class PaneFragment extends Fragment {
                 };
 
                 if (cpt == 1) { //Simple clic
-                    handler.postDelayed(r, 300);
-                } else if (cpt == 2) { //Double clic
+                    handler.postDelayed(r, 200);
+                    tapPosition = positionOrigin;
+                } else if (cpt == 2 && positionOrigin == tapPosition) { //Double clic
                     cpt = 0;
+
+                    ImageAdapter.Item item = ((ImageAdapter.Item) (parent.getAdapter().getItem(position)));
+                    Drawable i = ContextCompat.getDrawable(getActivity().getApplicationContext(), item.drawableId);
+                    String n = getActivity().getString(item.nameId);
+                    String p = getActivity().getString(item.priceId);
+
+                    doubleTap(n, p);
                 }
             }
         });
+
         return gridView;
     }
-    public void DoubleTap(){
 
+    private void doubleTap(String name, String prix){
+        MainActivity activity = ((MainActivity) getActivity());
+        ElemPanier elt = null;
+        for (ElemPanier e : activity.panier){
+            if (e.getNomElem() == name) elt = e;
+        }
+        int prix_int = Integer.parseInt(prix.substring(0, prix.length() - 1));
+        if (elt == null) activity.panier.add(new ElemPanier(name, 1, prix_int));
+        else {
+            int old_q = elt.getQuantites();
+            int old_p = elt.getprix();
+            elt.setQuantite(old_q + 1);
+            elt.setPrix(old_p + prix_int);
+        }
     }
 
 
@@ -95,5 +118,6 @@ public class PaneFragment extends Fragment {
         textview.setText(data);
 */
     }
+
 
 }
