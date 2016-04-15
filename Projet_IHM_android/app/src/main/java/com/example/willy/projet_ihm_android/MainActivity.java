@@ -1,5 +1,6 @@
 package com.example.willy.projet_ihm_android;
 
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.graphics.drawable.Drawable;
@@ -90,6 +91,7 @@ public class MainActivity extends AppCompatActivity implements LeftPaneFragment.
 
         transaction.add(R.id.leftSidePanel, leftMenuFragment, "leftMenuFragment");
         transaction.add(R.id.mainPanel, carrousselFragment, "mainFragment");
+        transaction.add(R.id.mainBottomPanel, new Fragment(), "mainBottomFragment");
 
     }
 
@@ -170,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements LeftPaneFragment.
     public void afficheDesc(String n, String d, String p, Drawable i){
         manager = getFragmentManager();
         transaction = manager.beginTransaction();
-        transaction.replace(  currentMainFragment.getId(), new DescriptionFoodFragment(n,d,p,i));
+        transaction.replace(  R.id.mainBottomPanel, new DescriptionFoodFragment(n,d,p,i));
         transaction.addToBackStack(null);
         transaction.commit();
     }
