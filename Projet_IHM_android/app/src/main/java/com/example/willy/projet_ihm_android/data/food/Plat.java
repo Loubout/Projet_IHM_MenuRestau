@@ -12,7 +12,7 @@ public class Plat extends ProductAbstract {
         super(name, description, price);
     }
 
-    public static final Parcelable.Creator<Plat> CREATOR = new Parcelable.Creator<Plat>() {
+    public static final Creator<Plat> CREATOR = new Creator<Plat>() {
         public Plat createFromParcel(Parcel in) {
             return new Plat(in);
         }

@@ -15,7 +15,7 @@ public class Entree extends ProductAbstract {
 
 
 
-    public static final Parcelable.Creator<Entree> CREATOR = new Parcelable.Creator<Entree>() {
+    public static final Creator<Entree> CREATOR = new Creator<Entree>() {
         public Entree createFromParcel(Parcel in) {
             return new Entree(in);
         }

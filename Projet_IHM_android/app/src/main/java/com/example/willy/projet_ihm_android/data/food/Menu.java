@@ -1,7 +1,6 @@
 package com.example.willy.projet_ihm_android.data.food;
 
 import android.os.Parcel;
-import android.os.Parcelable;
 
 import java.util.List;
 
@@ -24,7 +23,7 @@ public class Menu extends ItemAbstract {
         this.products = products;
     }
 
-    public static final Parcelable.Creator<Menu> CREATOR = new Parcelable.Creator<Menu>() {
+    public static final Creator<Menu> CREATOR = new Creator<Menu>() {
         public Menu createFromParcel(Parcel in) {
             return new Menu(in);
         }

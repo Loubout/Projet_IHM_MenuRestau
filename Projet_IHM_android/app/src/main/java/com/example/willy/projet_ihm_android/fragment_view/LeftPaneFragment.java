@@ -24,6 +24,7 @@ public class LeftPaneFragment extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.left_pane_fragment, container, false);
         listview = (ListView) getActivity().findViewById(android.R.id.list);
+
         return view;
     }
 

@@ -14,7 +14,7 @@ public class Dessert extends ProductAbstract {
     }
 
 
-    public static final Parcelable.Creator<Dessert> CREATOR = new Parcelable.Creator<Dessert>() {
+    public static final Creator<Dessert> CREATOR = new Creator<Dessert>() {
         public Dessert createFromParcel(Parcel in) {
             return new Dessert(in);
         }

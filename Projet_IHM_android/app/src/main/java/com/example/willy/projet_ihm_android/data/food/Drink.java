@@ -12,7 +12,7 @@ public class Drink extends ProductAbstract {
         super(name, description, price);
     }
 
-    public static final Parcelable.Creator<Drink> CREATOR = new Parcelable.Creator<Drink>() {
+    public static final Creator<Drink> CREATOR = new Creator<Drink>() {
         public Drink createFromParcel(Parcel in) {
             return new Drink(in);
         }
